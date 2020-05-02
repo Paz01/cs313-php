@@ -25,7 +25,7 @@
         <main>
             <div class="column1">
                 <figure>
-                    <img src="img\Wash_hands.jpg" alt="Wash hands">
+                    <img src="img\wash_hands.jpg" alt="Wash hands">
                 </figure>
 
                 <h3>Wash hands</h3>
