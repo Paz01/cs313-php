@@ -68,7 +68,7 @@
              </div>
         </main>
         <footer>
-            <p>&copy; 2020 &bull;&bull; CSE 341 - BYUI &bull;&bull; <?php echo "Today is " . date("Y/m/d"); echo " - "; echo "The time is " . date("h:i:sa") ?> &bull;&bull; All Rights Reserved</p>
+            <p>&copy; 2020 &bull;&bull; CSE 341 - BYUI &bull;&bull; <?php echo "Today is " . date("m/d/Y"); echo " - "; echo "The time is " . date("h:i:sa") ?> &bull;&bull; All Rights Reserved</p>
         </footer>
     </div>
 </body>
