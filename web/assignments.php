@@ -4,7 +4,7 @@
     <title>CSE 341 - Web Backend Development</title>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-                                                           <!-- this line below will prevent the browser to cache the css -->
+                                                           <!-- this line below will prevent the browser to be cached the css -->
      <link rel="stylesheet" type="text/css" href="style.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" />
 </head>
 <body>
@@ -29,7 +29,7 @@
                 </figure>
 
                 <h3>Wash hands</h3>
-                <p>During this pandemic we can all do our part and avoid the spreading of the virus. Always wash your hands often. </p>
+                <p>During this pandemic, we can all do our part and prevent the virus from spreading. Always wash your hands frequently.</p>
                 <p>Clean hands can save you and save me. We are in this together.</p>
             </div>
 
@@ -63,7 +63,7 @@
                 </figure>
                
                 <h3>Wear a mask</h3>
-                  <p> Please wear a mask and help us to stay safe. Wearing a mask can go a long way in helping the spread of the virus. </p>
+                  <p> Wear a mask and help us stay safe. Wearing a mask can go a long way in spreading the virus. </p>
                   <p> Wearing a mask can save you and save me. We are in this together.</p>
              </div>
         </main>
