@@ -34,17 +34,27 @@
             </div>
 
             <div class="column2">
-                <h2>Main Content</h2>
-                   <p>Hello, I am a student of Software Engineering at Brigham Young University Idaho. I like to create and resolve problems 
-                    using various technologies. I am passionate about the potential this field can have by creating an impact in the world. My atributes are;</p>
-                <ul>
-                    <li>Enthusiastic</li>
-                    <li>Motivated</li>
-                    <li>Hard worker</li>
-                </ul>
-                   <p>This page is designed to showcase my assignments while taking this class. It will serve as a landing page for my 
-                    work while working in the wonderful field of web thecnologies, please feel free to browse around and see what I am working. </p>
-                   <p> Thank you for stopping by.</p>
+                <h2>Main Assignments</h2>
+                   <p>This page is under construction, you will see here cool stuff.  
+                    </p>
+                <ol>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    <li>Links for assignments will be here </li>
+                    
+                </ol>
+                <p> Thank you for stopping by.</p>
             </div>
 
             <div class="column3">
