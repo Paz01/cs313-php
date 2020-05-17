@@ -4,7 +4,7 @@
     <title>CSE 341 - Web Backend Development</title>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-                                                           <!-- this line below will prevent the browser to be cached the css -->
+                                                           <!-- this line below will prevent the browser to cached the css -->
      <link rel="stylesheet" type="text/css" href="style.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" />
 </head>
 <body>
