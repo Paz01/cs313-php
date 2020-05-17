@@ -35,10 +35,10 @@
 
             <div class="column2">
                 <h2>Main Assignments</h2>
-                   <p>This page is under construction, you will see here cool stuff.  
+                   <p>Follow the links for my assignments, they are below a follows;
                     </p>
                 <ol>
-                    <li>Links for assignments will be here </li>
+                    <li><a href ="https://damp-citadel-71761.herokuapp.com/cart.php">Click here for Shopping Cart</a></li>
                     <li>Links for assignments will be here </li>
                     <li>Links for assignments will be here </li>
                     <li>Links for assignments will be here </li>
