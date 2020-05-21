@@ -1,8 +1,8 @@
 ------------ ACME DATABASE ---------------------
 
+DROP TABLE IF EXISTS job;
+DROP TABLE IF EXISTS service;
 DROP TABLE IF EXISTS customer;
-DROP TABLE IF EXISTS product;
-DROP TABLE IF EXISTS order;
 
 ------------CREATION -----------------------------
 CREATE TABLE customer
@@ -14,19 +14,33 @@ CREATE TABLE customer
     email VARCHAR (50) NOT NULL
 );
 -------------------------------------------------
-CREATE TABLE product 
+CREATE TABLE service 
 (
-    product_id SERIAL NOT NULL PRIMARY KEY,
-    cut_lawn VARCHAR (80) NOT NULL,
-    debris_removal VARCHAR (80) NOT NULL,
-    leaves_removal VARCHAR (80) NOT NULL
+    service_id SERIAL NOT NULL PRIMARY KEY,
+    type_of_service VARCHAR (80) NOT NULL
 );
 ------------------------------------------------
-CREATE TABLE order
+CREATE TABLE job
 (
-    order_id SERIAL NOT NULL PRIMARY KEY,s
+    job_id SERIAL NOT NULL PRIMARY KEY,
     notes TEXT NOT NULL,
     price NUMERIC (10,2) NOT NULL,
     customer_id INT REFERENCES customer (customer_id),
-    product_id INT REFERENCES product (product_id)
+    service_id INT REFERENCES service (service_id)
 );
+------------------- INSERTION ----------------------
+INSERT INTO customer (first_Name, last_Name, phone, email) VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
+INSERT INTO customer (first_Name, last_Name, phone, email) VALUES ('Jane', 'Doe', '812-123-1528', 'Doe@gmail.com');
+INSERT INTO customer (first_Name, last_Name, phone, email) VALUES ('Donald', 'Duck', '812-147-7814', 'Duck@gmail.com');
+
+-------------------- INSERTION ---------------------
+INSERT INTO service (type_of_service) VALUES ('Cut lawn');
+INSERT INTO service (type_of_service) VALUES ('Debris removal'); 
+INSERT INTO service (type_of_service) VALUES ('Leaves removal'); 
+
+-------------------- INSERTION ---------------------
+INSERT INTO job (notes, price, customer_id, service_id) VALUES ('The job went smooth', '75.00',1,1);
+INSERT INTO job (notes, price, customer_id, service_id) VALUES ('The job went fine', '105.00',1,1);
+INSERT INTO job (notes, price, customer_id, service_id) VALUES ('The job went ok', '50.00',1,2);
+INSERT INTO job (notes, price, customer_id, service_id) VALUES ('Easy job', '150.00',1,2);
+
