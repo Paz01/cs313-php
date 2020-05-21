@@ -1,5 +1,5 @@
 <?php
-require once ('dbConnect.php');
+require ('dbConnect.php');
 $db = get_db();
 
 // SELECT customer_id, first_name, last_name FROM customer;
