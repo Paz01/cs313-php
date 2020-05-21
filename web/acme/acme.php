@@ -3,14 +3,14 @@ require ('dbConnect.php');
 $db = get_db();
 
 // SELECT customer_id, first_name, last_name FROM customer;
-$query = 'SELECT customer_id, first_name, last_name FROM customer';
+$query = 'SELECT customer_id, first_name, last_name, phone FROM customer';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -29,8 +29,9 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $customer_id =$customer ['customer_id'];
                 $first_name = $customer['first_name'];
                 $last_name = $customer['last_name'];
+                $phone = $customer['phone'];
 
-                echo "<li><p> $first_name - $last_name</p></li>";
+                echo "<li><p> $first_name - $last_name - $phone </p></li>";
 
             }
         ?>
