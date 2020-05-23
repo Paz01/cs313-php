@@ -2,6 +2,8 @@
 require ('dbConnect.php');
 $db = get_db();
 
+session_start();
+
 // SELECT customer_id, first_name, last_name FROM customer;
 $query = 'SELECT customer_id, first_name, last_name, phone FROM customer';
 $stmt = $db->prepare($query);
@@ -44,7 +46,7 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
         ?>
 
-        
+        echo '<a href="logout.php?logout">Logout</a>';
 
 
 
