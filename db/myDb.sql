@@ -48,7 +48,7 @@ INSERT INTO service (type_of_service) VALUES ('Debris removal');
 INSERT INTO service (type_of_service) VALUES ('Leaves removal'); 
 
 -------------------- INSERTION SERVICE ---------------------
-INSERT INTO employee (e_user_name, e_password) VALUES ('Admin', 'Admin');
+INSERT INTO employee (e_user_name, e_password) VALUES ('Admin', 'Admin1');
 
 -------------------- INSERTION JOB ---------------------
 INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('The job went smooth', '75.00',1,1,1);
