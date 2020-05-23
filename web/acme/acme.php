@@ -46,8 +46,13 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
         ?>
 
-        echo '<a href="logout.php?logout">Logout</a>';
+        <a href="logout.php?logout">Logout</a>';
+        
+        
 
+        <br/>
+
+        <a href="logout.php" <button class="btn btn-success mt-3" name="Logout">Logout</button> </a>';
 
 
     </body>
