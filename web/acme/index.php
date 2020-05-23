@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.css">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom style -->
+    <link href="css/style.css" rel="stylesheet">
+
+
     <title>Login Form for Acme Enterprises</title>
 </head>
 <body style="background:#CCC;">
@@ -14,7 +22,7 @@
             <div class="col-lg-6 m-auto">
                 <div class="card bg-dark mt-5">
                     <div class="card-title bg-primary text-white mt-5">
-                        <h3 class="text-center py-3">Login Form in PHP </h3>
+                        <h3 class="text-center py-3">Acme - Login </h3>
                     </div>
  
                     <?php 
