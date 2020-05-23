@@ -9,14 +9,14 @@
         echo ' Welcome ' . $_SESSION['User'].'<br/>';
         echo '<br/>';
         echo '<br/>';
+        
+        
         echo 'We are thrilled that you are part of Acme Enterprises';
+        echo 'This is your main landing page where you will the activity of the company';
 
         echo '<br/>';
 
         echo 'Click on the links below to continue';
-        
-               
-        echo 'This is your main landing page where you will the activity of the company';
 
         echo '<br/>';
         
