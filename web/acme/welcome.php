@@ -7,6 +7,7 @@
         
         echo '<a href = "acme.php?logout">Acme Control Panel</a>';
 
+        '<br/>';
         //echo "Otherw"
 
         echo '<a href="logout.php?logout">Logout</a>';

@@ -13,6 +13,7 @@ session_start();
        }
        else
        {
+           // Gettting the database information 
         $query = "SELECT * FROM employee WHERE e_user_name ='".$_POST['UName']."' AND e_password='".$_POST['Password']."'";
         $stmt = $db->prepare($query);
         $stmt->execute();
