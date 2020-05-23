@@ -26,7 +26,7 @@ $services = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <title>Acme Enterprises</title>
+        <title>Acme Enterprises test</title>
     </head>
     <body>
         <h1>This is test for Acme Enterprises</h1>
