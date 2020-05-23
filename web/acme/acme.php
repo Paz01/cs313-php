@@ -11,13 +11,11 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <?php
 
-require ('dbConnect.php');
-$db = get_db();
 // SELECT type_of_service FROM service;
-$query1 = 'SELECT type_of_service FROM service';
-$stmt1 = $db->prepare($query);
-$stmt1->execute();
-$services = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+// $query1 = 'SELECT type_of_service FROM service';
+// $stmt1 = $db->prepare($query);
+// $stmt1->execute();
+// $services = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -31,7 +29,7 @@ $services = $stmt1->fetchAll(PDO::FETCH_ASSOC);
         <title>Acme Enterprises</title>
     </head>
     <body>
-        <h1>This is test 05-23-20 for Acme Enterprises</h1>
+        <h1>This is test for Acme Enterprises</h1>
 
         <?php
             foreach ($customers as $customer )
@@ -45,18 +43,8 @@ $services = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
             }
         ?>
-        <br>
-        <?php
 
-            foreach ($services as $services)
-            {
-                $type_of_service = $services['type_of_service'];
-
-                echo $type_of_service ;
-            }
-
-
-        ?>
+        
 
 
 
