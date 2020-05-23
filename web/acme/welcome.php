@@ -12,7 +12,9 @@
         
         
         echo 'We are thrilled that you are part of Acme Enterprises. ';
-        echo 'This is your main landing page where you will the activity of the company';
+        echo 'This is your main landing page where you will updating a series of activities, your primary role' ; 
+        echo 'will be to update the activity of our customers orders, their information and managing our orders ';
+        echo 'If you have any questions please contact your manager in charge ';
 
         echo '<br/>';
 
