@@ -1,7 +1,7 @@
-session_start();
+
 
 <?php
-    
+    session_start(); // if session starts on top before <?php the login stops working
  
     if(isset($_SESSION['User']))
     {
@@ -26,14 +26,14 @@ session_start();
         //<button class="btn btn-success mt-3" name="Logout">Logout</button>
         
         //<button class="btn btn-success mt-3" name="Login">Login</button>
-
+        echo '<a href="logout.php?logout" <button class="btn btn-success mt-3 " name="Logout">Logout</button> </a>';
     }
     else
     {
         header("location:index.php");
     }
  
-
+    
     
 
 ?>
