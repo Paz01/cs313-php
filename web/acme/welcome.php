@@ -8,10 +8,10 @@
     {
         echo ' Welcome ' . $_SESSION['User'].'<br/>';
         echo '<br/>';
-        echo '<br/>';
         
         
-        echo 'We are thrilled that you are part of Acme Enterprises';
+        
+        echo 'We are thrilled that you are part of Acme Enterprises. ';
         echo 'This is your main landing page where you will the activity of the company';
 
         echo '<br/>';
@@ -36,9 +36,9 @@
         //<button class="btn btn-success mt-3" name="Logout">Logout</button>
         //<button class="btn btn-success mt-3" name="Login">Login</button>
 
-        echo '<a href="acme.php?Control Panel" <button class="btn btn-primary mt-3 btn-block" name="Control Panel">Control Panel</button></a>';
+        echo '<a href="acme.php?Control Panel" <button class="btn btn-success mt-3 btn-block" name="Control Panel">Control Panel</button></a>';
         
-        echo '<a href="logout.php?logout" <button class="btn btn-danger mt-3 btn-block" name="Logout">Logout</button></a>';
+        echo '<a href="logout.php?logout" <button class="btn btn-primary mt-3 btn-block" name="Logout">Logout</button></a>';
     }
     else
     {
