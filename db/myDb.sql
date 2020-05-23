@@ -44,3 +44,8 @@ INSERT INTO job (notes, price, customer_id, service_id) VALUES ('The job went fi
 INSERT INTO job (notes, price, customer_id, service_id) VALUES ('The job went ok', '50.00',1,2);
 INSERT INTO job (notes, price, customer_id, service_id) VALUES ('Easy job', '150.00',1,2);
 
+-------------------------- QUERIES ------------------------------------
+/* This query will display the selected columns from customer table 
+/* SELECT customer_id, first_name, last_name, phone FROM customer'; */
+
+SELECT type_of_service FROM service;

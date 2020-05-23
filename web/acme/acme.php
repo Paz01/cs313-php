@@ -9,6 +9,16 @@ $stmt->execute();
 $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+<?php
+
+// SELECT type_of_service FROM service;
+$query1 = 'SELECT type_of_service FROM service';
+$stmt1 = $db->prepare($query);
+$stmt1->execute();
+$services = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -16,9 +26,7 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        
         <title>Acme Enterprises</title>
-        
     </head>
     <body>
         <h1>This is test for Acme Enterprises</h1>
@@ -35,6 +43,20 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             }
         ?>
+
+        <?php
+
+            foreach ($services as $services)
+            {
+                $type_of_service = $services['type_of_service'];
+
+                echo $type_of_service ;
+            }
+
+
+        ?>
+
+
 
     </body>
 </html>
