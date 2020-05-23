@@ -30,6 +30,9 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <head>
         <title>Acme Enterprises</title>
     </head>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+
     <body>
         <h1>This is test for Acme Enterprises</h1>
 
