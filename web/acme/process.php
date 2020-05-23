@@ -16,9 +16,9 @@ session_start();
         $query = "SELECT * FROM employee WHERE e_user_name ='".$_POST['UName']."' AND e_password='".$_POST['Password']."'";
         $stmt = $db->prepare($query);
         $stmt->execute();
-        $employees = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+        //$employees = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
-        if ($employees = true)
+        if ($employees = $stmt->fetchAll(PDO::FETCH_ASSOC))
         {
             $_SESSION['User']=$_POST['UName'];
             header("location:welcome.php");
