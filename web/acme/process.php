@@ -18,7 +18,7 @@ session_start();
         $stmt->execute();
         $employees = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
-        if ($employees)
+        if ($employees = true)
         {
             $_SESSION['User']=$_POST['UName'];
             header("location:welcome.php");
