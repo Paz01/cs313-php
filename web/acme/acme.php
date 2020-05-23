@@ -26,10 +26,10 @@ $services = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <title>Acme Enterprises test</title>
+        <title>Acme Enterprises</title>
     </head>
     <body>
-        <h1>This is test for Acme Enterprises</h1>
+        <h1>This is test 05-23-20 for Acme Enterprises</h1>
 
         <?php
             foreach ($customers as $customer )
@@ -43,7 +43,7 @@ $services = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
             }
         ?>
-
+        <br>
         <?php
 
             foreach ($services as $services)
