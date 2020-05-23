@@ -32,7 +32,9 @@ session_start();
     }
     else
     {
-        echo 'Not Working Now Guys';
+        //echo 'Not Working Now Guys';
+        //echo '<a href="logout.php?logout">Logout</a>';
+        header("location:index.php");
     }
 
 ?>
