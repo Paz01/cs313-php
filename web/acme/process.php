@@ -6,7 +6,10 @@ $db = get_db();
 session_start();
     if(isset($_POST['Login']))
     {
-       echo 'is working';
+       if (empty($_POST['UName']) || empty($_POST['Password']))
+       {
+           header(" location:index.php ? Empty = Please enter your credentials");
+       }
     }
     else
     {
