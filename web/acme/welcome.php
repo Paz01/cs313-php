@@ -10,7 +10,18 @@
         echo '<br/>';
         //echo "Otherw"
 
+        //<button class="btn btn-success mt-3" name="Login">Login</button>
+
+        //echo '<button class="btn btn-success mt-3" name="Login">Login</button>
+
         echo '<a href="logout.php?logout">Logout</a>';
+
+        echo '<a href="logout.php" <button class="btn btn-success mt-3" name="Logout">Logout</button></a>';
+              
+       // <button class="btn btn-success mt-3" name="Logout">Logout</button>
+        
+        //<button class="btn btn-success mt-3" name="Login">Login</button>
+
     }
     else
     {
