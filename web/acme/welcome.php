@@ -5,9 +5,9 @@
     {
         echo ' Welcome ' . $_SESSION['User'].'<br/>';
         
-        echo '<a href = "acme.php?logout">Acme Control Panel</a>';
+        echo '<a href = "acme.php">Acme Control Panel</a><br/>';
 
-        '<br/>';
+        echo '<br/>';
         //echo "Otherw"
 
         echo '<a href="logout.php?logout">Logout</a>';
