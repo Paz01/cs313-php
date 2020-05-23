@@ -7,10 +7,10 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="web/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom style -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="web/css/style.css" rel="stylesheet">
 
 
     <title>Login Form for Acme Enterprises</title>
