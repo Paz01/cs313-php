@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-
+    
     <!-- Bootstrap core CSS -->
-    <link href="web/css/bootstrap.min.css" rel="stylesheet">
+    <link href="web\css\bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom style -->
-    <link href="web/css/style.css" rel="stylesheet">
-
+    <link href="web\css\style.css" rel="stylesheet">
+    
 
     <title>Login Form for Acme Enterprises</title>
 </head>
