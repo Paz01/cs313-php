@@ -8,7 +8,12 @@
     {
         echo ' Welcome ' . $_SESSION['User'].'<br/>';
 
+        echo 'We are thrilled that you are part of Acme Enterprises';
+        
         echo '<br/>';
+        
+        echo 'This is your main landing page where you will the activity of the company';
+
         echo '<br/>';
         
         echo '<a href = "acme.php">Acme Control Panel</a><br/>';
