@@ -32,8 +32,11 @@ session_start();
     }
     else
     {
-        //echo 'Not Working Now Guys';
+        //echo 'Sorry you are not supposed to be here';
         //echo '<a href="logout.php?logout">Logout</a>';
+        
+        // We need to prevent direct access to the proccess page 
+
         header("location:index.php");
     }
 
