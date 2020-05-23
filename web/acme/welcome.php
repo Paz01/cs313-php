@@ -1,9 +1,7 @@
-
-
-
+session_start();
 
 <?php
-    session_start();
+    
  
     if(isset($_SESSION['User']))
     {
@@ -25,7 +23,7 @@
 
         //echo '<a href="logout.php" <button class="btn btn-success mt-3" name="Logout">Logout</button> </a>';
               
-       // <button class="btn btn-success mt-3" name="Logout">Logout</button>
+        //<button class="btn btn-success mt-3" name="Logout">Logout</button>
         
         //<button class="btn btn-success mt-3" name="Login">Login</button>
 
