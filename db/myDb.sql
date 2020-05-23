@@ -48,4 +48,4 @@ INSERT INTO job (notes, price, customer_id, service_id) VALUES ('Easy job', '150
 /* This query will display the selected columns from customer table 
 /* SELECT customer_id, first_name, last_name, phone FROM customer'; */
 
-SELECT type_of_service FROM service;
+/* SELECT type_of_service FROM service;
