@@ -7,7 +7,7 @@
 
     
     <!-- Bootstrap core CSS -->
-    <link href="web\css\bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom style 
     <link href="web\css\style.css" rel="stylesheet"> -->
