@@ -1,4 +1,5 @@
 
+<link href="css/bootstrap.css" rel="stylesheet">
 
 <?php
     session_start(); // if session starts on top before <?php the login stops working
