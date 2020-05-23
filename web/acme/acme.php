@@ -11,6 +11,8 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <?php
 
+require ('dbConnect.php');
+$db = get_db();
 // SELECT type_of_service FROM service;
 $query1 = 'SELECT type_of_service FROM service';
 $stmt1 = $db->prepare($query);
