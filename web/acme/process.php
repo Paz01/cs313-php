@@ -11,6 +11,24 @@ session_start();
        {
            header ("location:index.php?Empty=Please enter your credentials");
        }
+       else
+       {
+        $query = "SELECT * FROM employee WHERE e_user_name ='".$_POST['UName']."' AND e_password='".$_POST['Password']."'";
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $employees = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+
+        if ($employees)
+        {
+            $_SESSION['User']=$_POST['UName'];
+            header("location:welcome.php");
+        }
+        else
+        {
+            header("location:index.php?Invalid=Please enter good credentials");
+        }
+
+       }
     }
     else
     {
