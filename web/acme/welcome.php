@@ -8,6 +8,9 @@
     if(isset($_SESSION['User']))
     {
         echo ' Welcome ' . $_SESSION['User'].'<br/>';
+
+        echo '<br/>';
+        echo '<br/>';
         
         echo '<a href = "acme.php">Acme Control Panel</a><br/>';
 
