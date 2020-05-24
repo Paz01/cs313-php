@@ -37,6 +37,7 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1>This is test for Acme Enterprises</h1>
 
         <?php
+        /*
             foreach ($customers as $customer )
             {
                 $customer_id =$customer ['customer_id'];
@@ -47,6 +48,10 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo "<li><p> $first_name - $last_name - $phone </p></li>";
 
             }
+            */
+            echo "<table>";
+            echo "<tr><th>First Name</th><th>Last Name</th><th>Phone Number</th>"
+
         ?>
 
         
@@ -55,7 +60,7 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <br/>
 
-        <a href="logout.php?logout" <button class="btn btn-success mt-3" name="Logout">Logout</button> </a>
+        <a href="logout.php?logout" <button class="btn btn-success mt-3 " name="Logout">Logout</button> </a>
 
 
            
