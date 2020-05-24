@@ -8,7 +8,7 @@ session_start();
 $query = 'SELECT customer_id, first_name, last_name, phone FROM customer';
 $stmt = $db->prepare($query);
 $stmt->execute();
-$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <?php
@@ -52,7 +52,7 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
             echo "<table>";
             echo "<tr><th>First Name</th><th> Last Name </th><th> Phone Number </th>";
 
-            while ($customers = true)
+            while ($customers = $stmt->fetchAll(PDO::FETCH_ASSOC))
             {
                 echo "<tr><td>";
                 echo $customers ['first_name'];
