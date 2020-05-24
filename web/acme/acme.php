@@ -8,7 +8,7 @@ session_start();
 $query = 'SELECT customer_id, first_name, last_name, phone FROM customer';
 $stmt = $db->prepare($query);
 $stmt->execute();
-//$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <?php
