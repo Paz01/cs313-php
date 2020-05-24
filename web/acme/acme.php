@@ -8,7 +8,7 @@ session_start();
 $query = 'SELECT customer_id, first_name, last_name, phone FROM customer';
 $stmt = $db->prepare($query);
 $stmt->execute();
-//$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <?php
@@ -37,21 +37,36 @@ $stmt->execute();
         <h1>This is test for Acme Enterprises</h1>
 
         <?php
-        /*
+        
+            echo "<table>";
+            echo "<tr><th>First Name</th><th> Last Name </th><th> Phone Number </th>";
+
             foreach ($customers as $customer )
             {
+                /*
                 $customer_id =$customer ['customer_id'];
                 $first_name = $customer['first_name'];
                 $last_name = $customer['last_name'];
                 $phone = $customer['phone'];
 
                 echo "<li><p> $first_name - $last_name - $phone </p></li>";
+                */
+
+                echo "<tr><td>";
+                echo $first_name = $customer['first_name'];
+                echo "<tr><td>";
+                echo $last_name = $customer['last_name'];
+                echo "<tr><td>";
+                echo  $phone = $customer['phone'];
+                echo "<tr><td>";
 
             }
-            */
+            
+
+            /*
             echo "<table>";
             echo "<tr><th>First Name</th><th> Last Name </th><th> Phone Number </th>";
-
+            
             while ($customers = $stmt->fetchAll(PDO::FETCH_ASSOC))
             {
                 echo "<tr><td>";
@@ -62,7 +77,7 @@ $stmt->execute();
                 echo  $phone = $customers['phone'];
                 echo "<tr><td>";
             }
-
+            */
         ?>
 
         
