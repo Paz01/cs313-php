@@ -8,8 +8,8 @@ session_start();
 $query = 'SELECT customer_id, first_name, last_name, phone FROM customer';
 $stmt = $db->prepare($query);
 $stmt->execute();
-$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+//$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <?php
 
@@ -35,14 +35,14 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <body>
         <h1>This is test for Acme Enterprises</h1>
-
-        <?php
         
-            echo "<table>";
-            echo "<tr><th>First Name</th><th> Last Name </th><th> Phone Number </th>";
-
-            foreach ($customers as $customer )
-            {
+        <?php
+            
+            //echo "<table>";
+            //echo "<tr><th>First Name</th><th> Last Name </th><th> Phone Number </th>";
+            
+            //foreach ($customers as $customer )
+           // {
                 /*
                 $customer_id =$customer ['customer_id'];
                 $first_name = $customer['first_name'];
@@ -51,7 +51,7 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 echo "<li><p> $first_name - $last_name - $phone </p></li>";
                 */
-
+            /*
                  $first_name = $customer['first_name'];
                
                  $last_name = $customer['last_name'];
@@ -59,10 +59,9 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
                  $phone = $customer['phone'];
                 
                  echo " $first_name - $last_name - $phone ";
-
-            }
+            */
+            //}
             
-
             /*
             echo "<table>";
             echo "<tr><th>First Name</th><th> Last Name </th><th> Phone Number </th>";
@@ -78,8 +77,15 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo "<tr><td>";
             }
             */
-        ?>
 
+            foreach ($rows as $row)
+            {
+                echo "<p>" . "First Name: " . $row['first_name'] . "</P>" . 
+                     "<p>" . "Last Nme: " . $row['last_name'] . "</p>" . 
+                     "<p>" . "Phone: " . $row['phone'] . "</p>";
+            }
+        ?>
+        
         
         
         
