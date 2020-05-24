@@ -34,7 +34,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <body>
-        <h1>This is test for Acme Enterprises</h1>
+        <h2>These are the customers of Acme Enterprises</h12
         
         <?php
             
@@ -80,8 +80,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($rows as $row)
             {
-                echo "<p>" . "First Name: " . $row['first_name'] . "</P>" . 
-                     "<p>" . "Last Nme: " . $row['last_name'] . "</p>" . 
+                echo "<p>" . "First Name: " . $row['first_name'] . "</P>" .
+                     "<p>" . "Last Name: " . $row['last_name'] . "</p>" . 
                      "<p>" . "Phone: " . $row['phone'] . "</p>";
             }
         ?>
