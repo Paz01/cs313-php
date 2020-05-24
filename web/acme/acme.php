@@ -55,11 +55,11 @@ $stmt->execute();
             while ($customers = $stmt->fetchAll(PDO::FETCH_ASSOC))
             {
                 echo "<tr><td>";
-                echo $customers ['first_name'];
+                echo $first_name = $customer['first_name'];
                 echo "<tr><td>";
-                echo $customers ['last_name'];
+                echo $last_name = $customer['last_name'];
                 echo "<tr><td>";
-                echo $customers ['phone'];
+                echo  $phone = $customer['phone'];
                 echo "<tr><td>";
             }
 
