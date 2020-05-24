@@ -50,7 +50,18 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
             */
             echo "<table>";
-            echo "<tr><th>First Name</th><th>Last Name</th><th>Phone Number</th>"
+            echo "<tr><th>First Name</th><th> Last Name </th><th> Phone Number </th>";
+
+            while ($customers = true)
+            {
+                echo "<tr><td>";
+                echo $customers ['first_name'];
+                echo "<tr><td>";
+                echo $customers ['last_name'];
+                echo "<tr><td>";
+                echo $customers ['phone'];
+                echo "<tr><td>";
+            }
 
         ?>
 
