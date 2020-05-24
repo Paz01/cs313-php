@@ -35,7 +35,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <body>
         <h3>These are the customers of Acme Enterprises</h3>
-        
+        <br>
+        <br>
         <?php
             
             //echo "<table>";
@@ -83,7 +84,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo "<p>" . "First Name: " . $row['first_name'] . "</P>" .
                      "<p>" . "Last Name: " . $row['last_name'] . "</p>" . 
                      "<p>" . "Phone: " . $row['phone'] . "</p>";
-                echo "------------------";
+                echo "----------------------------";
             }
         ?>
         
