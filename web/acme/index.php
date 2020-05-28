@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-6 m-auto">
                 <div class="card bg-dark mt-5">
-                    <div class="card-title bg-primary text-white mt-5">
+                    <div class="card-title bg-info text-white mt-5">
                         <h3 class="text-center py-3">Acme Enterprises - Login </h3>
                     </div>
  
