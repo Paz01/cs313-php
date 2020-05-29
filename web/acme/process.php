@@ -37,7 +37,7 @@ session_start();
         //echo 'Sorry you are not supposed to be here';
         //echo '<a href="logout.php?logout">Logout</a>';
         
-        // We need to prevent direct access to the proccess page 
+        // We need to prevent direct access to the proccess page, we will re-direct users the login page 
 
         header("location:index.php");
     }
