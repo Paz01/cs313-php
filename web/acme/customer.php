@@ -3,29 +3,24 @@
 require_once('dbConnect.php');
 $db = get_db();
 
-$first = $_POST['first'];
-$last = $_POST['last'];
-$phone = $_POST['phone'];
-$email = $_POST['email'];
+if(!empty($_POST))
+{
+    $first = $_POST['first'];
+    $last = $_POST['last'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
 
-print_r($_POST);
+    $query = "INSERT INTO customer (first_Name, last_Name, phone, email) 
+           VALUES ('$first', '$last', '$phone', '$email');";
 
-if ($_POST ){
-    echo "Entro en la condicional if";
-}
-if(!empty($_POST)){
-    echo "Entro en la segunda condictional if";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $stmt->fetchALL(PDO::FETCH_ASSOC); 
+       
 }
 // INSERT INTO customer (first_Name, last_Name, phone, email) 
 // VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
-/*
-$query = "INSERT INTO customer (first_Name, last_Name, phone, email) 
-           VALUES ('$first', '$last', '$phone', '$email');";
 
-$stmt = $db->prepare($query);
-$stmt->execute();
-$stmt->fetchALL(PDO::FETCH_ASSOC); 
-*/
 ?>
 
 <!DOCTYPE html>
