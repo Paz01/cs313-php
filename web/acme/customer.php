@@ -8,30 +8,27 @@ $last = $_POST['last'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 
+print_r($_POST);
 // INSERT INTO customer (first_Name, last_Name, phone, email) 
 // VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
-
+/*
 $query = "INSERT INTO customer (first_Name, last_Name, phone, email) 
            VALUES ('$first', '$last', '$phone', '$email');";
 
 $stmt = $db->prepare($query);
 $stmt->execute();
 $stmt->fetchALL(PDO::FETCH_ASSOC); 
-
-
+*/
 ?>
 
 <!DOCTYPE html>
-
     <head>
       <title>Customers </title>
-
     </head>
     <body>
 
-
-    <form action="" method="POST">
-     
+    <form action="customer.php" method="POST">
+  
      <input type ="text" name ="first" placeholder = "First Name">
      <br>
      <input type ="text" name ="last" placeholder = "Last Name">
