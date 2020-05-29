@@ -3,7 +3,7 @@
 require_once('dbConnect.php');
 $db = get_db();
 
-if(empty($_POST))
+if(!empty($_POST))
 {
     $first = $_POST['first'];
     $last = $_POST['last'];
