@@ -30,7 +30,7 @@ $stmt->fetchALL(PDO::FETCH_ASSOC);
     <body>
 
 
-    <form action="/action_page.php" method="POST">
+    <form action="" method="POST">
      
      <input type ="text" name ="first" placeholder = "First Name">
      <br>
