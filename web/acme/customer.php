@@ -3,7 +3,7 @@
 require_once('dbConnect.php');
 $db = get_db();
 
-if(!empty($_POST))
+if(empty($_POST))
 {
     $first = $_POST['first'];
     $last = $_POST['last'];
@@ -11,7 +11,7 @@ if(!empty($_POST))
     $email = $_POST['email'];
 
     $query = "INSERT INTO customer (first_Name, last_Name, phone, email) 
-           VALUES ('$first', '$last', '$phone', '$email');";
+              VALUES ('$first', '$last', '$phone', '$email');";
 
     $stmt = $db->prepare($query);
     $stmt->execute();
