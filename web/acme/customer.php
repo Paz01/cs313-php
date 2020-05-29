@@ -9,6 +9,13 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 
 print_r($_POST);
+
+if ($_POST ){
+    echo "Entro en la condicional if";
+}
+if(!empty($_POST)){
+    echo "Entro en la segunda condictional if";
+}
 // INSERT INTO customer (first_Name, last_Name, phone, email) 
 // VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
 /*
