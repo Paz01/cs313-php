@@ -65,7 +65,14 @@ if(!empty($_GET))
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
-                    
+
+                        <div class="form-group">
+                        <label for="Phone">Phone:</label>
+                        <input type="text" class="form-control" id="phone" input value = " "
+                                placeholder = "Enter Phone Number" name = "phone" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
                     
                   <!--<input value = "<?php //echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">-->
                   <!--<br>
