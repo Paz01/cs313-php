@@ -22,50 +22,47 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <body style="background:#CCC;">
-        <h3>Control Panel - Acme Enterprises</h3>
-        <br>
-        
+      <br>
         <div class="container">
-        
-        <h3 class="text-center py-3">Acme Enterprises - Login </h3>
+            <h3 class="text-center py-3">Control Panel - Acme Enterprises</h3>
+                <br>
+                    <table class ="table">
+                    
+                                <thead class ="thread-dark">
+                                    <tr>
+                                        <th>Record</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                        <tbody>
+                                <?php if (is_array($rows)):
+                                        $i=1;
+                                        foreach($rows as $record):
 
-            <table class ="table">
-                        <thead>
-                            <tr>
-                                <th>Record</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                <tbody>
-                        <?php if (is_array($rows)):
-                                $i=1;
-                                foreach($rows as $record):
+                                ?> 
+                                    <tr>
+                                        <td> <?php echo $i;?> </td>
+                                        <td> <?php echo $record['first_name'] ?> </td>
+                                        <td> <?php echo $record['last_name']  ?> </td>
+                                        <td> <?php echo $record['phone']      ?> </td>
+                                        <td> <?php echo $record['email']      ?> </td>
+                                        <td>
+                                            <?php $id = $record['customer_id'] ?>
+                                            
+                                            <a href = " <?php echo "customer.php?record=$id"?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                                            <a href = "                                       "><button type="button" class="btn btn-danger ">Delete</button> </a>
+                                        </td>
+                                            <?php $i++; ?>
+                                    </tr>
+                                            <?php  endforeach;?>
+                                            <?php       endif;?>
+                        </tbody>
 
-                        ?> 
-                            <tr>
-                                <td> <?php echo $i;?> </td>
-                                <td> <?php echo $record['first_name'] ?> </td>
-                                <td> <?php echo $record['last_name']  ?> </td>
-                                <td> <?php echo $record['phone']      ?> </td>
-                                <td> <?php echo $record['email']      ?> </td>
-                                <td>
-                                    <?php $id = $record['customer_id'] ?>
-                                    
-                                    <a href = " <?php echo "customer.php?record=$id"?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                    <a href = "                                       "><button type="button" class="btn btn-danger ">Delete</button> </a>
-                                </td>
-                                
-                                    <?php $i++; ?>
-                            </tr>
-                                    <?php  endforeach;?>
-                                    <?php       endif;?>
-                </tbody>
-
-            </table>
+                    </table>
 
             <a href="logout.php?logout" <button class="btn btn-success mt-3 " name="Logout">Logout</button> </a>
 
