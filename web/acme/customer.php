@@ -94,6 +94,7 @@ if(!empty($_GET))
                   
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    <a href="acme.php" <button class="btn btn-primary mt-3 float-right" name="Control">Control Panel</button> </a>
                 </table>
         </div>
         
