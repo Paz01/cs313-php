@@ -30,6 +30,9 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <thead>
                     <tr>
                         <th>
+                            Record
+                        </th>
+                        <th>
                             firstName
                         </th>
                         <th>
@@ -38,8 +41,12 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th>
                             Phone
                         </th>
+                        <th>
+                            Actions 
+                        </th>
                     </tr>
                 </thead>
+
 
         <tbody>
             <?php if (is_array($rows)):
@@ -49,6 +56,9 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ?> 
             <tr>
                     <td>
+                    <?php echo $i;  ?>
+                    </td>
+                    <td>
                     <?php echo $record['first_name']  ?>
                     </td>
                     <td>
@@ -57,6 +67,11 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td>
                     <?php echo $record['phone']  ?>
                     </td>
+                    <td>
+                          <a href = " "> Edit  </a>
+                          <a href = " "> Delete </a>
+                    </td>
+                    
                     <?php $i++; ?>
             </tr>
                     <?php  endforeach;?>
