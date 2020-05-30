@@ -39,22 +39,30 @@ if(!empty($_GET))
 
 <!DOCTYPE html>
 <head>
-  <title>Bootstrap Example</title>
+  <title>Customers</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</head>
+  <!--<link href="css/bootstrap.css" rel="stylesheet"> -->
 
     <body>
         <div class="container">
                 <table class ="table">
                     
                     <form action="customer.php" method="POST">
-                
-                    <input value = "<?php echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">
+
+                    <div class="form-group">
+                      <label for="First Name">First Name:</label>
+                      <input type="text" class="form-control" id="uname" placeholder="Enter First Name" name="first" required>
+                      <div class="valid-feedback">Valid.</div>
+                      <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    
+                    <!--<input value = "<?php //echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">-->
                     <br>
                     <input                                               type ="text" name ="last" placeholder = "Last Name">
                     <br>
@@ -62,8 +70,9 @@ if(!empty($_GET))
                     <br>
                     <input                                               type ="text" name ="email" placeholder = "E-mail">
                     <br>
-                    <button type = "Insert" name = "Insert"> Insert </button>
-                    
+
+                    <!--<button type = "Insert" name = "Insert"> Insert </button>-->
+                    <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </table>
         </div>
