@@ -41,25 +41,26 @@ if(!empty($_GET))
     <head>
       <title>Customers </title>
     </head>
+    <link href="css/bootstrap.css" rel="stylesheet">
     <body>
-    <div class="container">
-            <table class ="table">
+        <div class="container">
+                <table class ="table">
+                    
+                    <form action="customer.php" method="POST">
                 
-                <form action="customer.php" method="POST">
-            
-                <input value = "<?php echo $info [1]->first_name?>" type ="text" name ="first" placeholder = "First Name">
-                <br>
-                <input type ="text" name ="last" placeholder = "Last Name">
-                <br>
-                <input type ="text" name ="phone" placeholder = "Phone">
-                <br>
-                <input type ="text" name ="email" placeholder = "E-mail">
-                <br>
-                <button type = "Insert" name = "Insert"> Insert </button>
-                
-                </form>
-            </table>
-    </div>
+                    <input value = "<?php echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">
+                    <br>
+                    <input type ="text" name ="last" placeholder = "Last Name">
+                    <br>
+                    <input type ="text" name ="phone" placeholder = "Phone">
+                    <br>
+                    <input type ="text" name ="email" placeholder = "E-mail">
+                    <br>
+                    <button type = "Insert" name = "Insert"> Insert </button>
+                    
+                    </form>
+                </table>
+        </div>
         
     </body>
 </html>
