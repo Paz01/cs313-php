@@ -57,18 +57,17 @@ if(!empty($_GET))
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
-
                     
-                    <!--<input value = "<?php //echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">-->
-                    <br>
+                  <!--<input value = "<?php //echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">-->
+                  <!--<br>
                     <input                                               type ="text" name ="last" placeholder = "Last Name">
                     <br>
                     <input                                               type ="text" name ="phone" placeholder = "Phone">
                     <br>
                     <input                                               type ="text" name ="email" placeholder = "E-mail">
                     <br>
-
-                    <!--<button type = "Insert" name = "Insert"> Insert </button>-->
+                    <button type = "Insert" name = "Insert"> Insert </button>-->
+                  
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </table>
