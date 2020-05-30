@@ -45,7 +45,7 @@ if(!empty($_GET))
 
     <body>
         <div class="container">
-            <h2 class="text-center py-3">Customer information</23>
+            <h2 class="text-center py-3">Customer information</h2>
                 <table class ="table">
                     
                     <form action="customer.php" method="POST">
