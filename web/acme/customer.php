@@ -38,10 +38,16 @@ if(!empty($_GET))
 ?>
 
 <!DOCTYPE html>
-    <head>
-      <title>Customers </title>
-    </head>
-    <link href="css/bootstrap.css" rel="stylesheet">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
     <body>
         <div class="container">
                 <table class ="table">
@@ -50,11 +56,11 @@ if(!empty($_GET))
                 
                     <input value = "<?php echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">
                     <br>
-                    <input type ="text" name ="last" placeholder = "Last Name">
+                    <input                                               type ="text" name ="last" placeholder = "Last Name">
                     <br>
-                    <input type ="text" name ="phone" placeholder = "Phone">
+                    <input                                               type ="text" name ="phone" placeholder = "Phone">
                     <br>
-                    <input type ="text" name ="email" placeholder = "E-mail">
+                    <input                                               type ="text" name ="email" placeholder = "E-mail">
                     <br>
                     <button type = "Insert" name = "Insert"> Insert </button>
                     
