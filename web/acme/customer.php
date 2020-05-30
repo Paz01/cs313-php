@@ -3,6 +3,8 @@
 require_once('dbConnect.php');
 $db = get_db();
 
+$info = null;
+
 if(!empty($_POST))
 {
     $first = $_POST['first'];
@@ -25,11 +27,9 @@ if(!empty($_GET))
     $query = "SELECT * FROM customer WHERE customer_id = $record_id";
     
     $stmt = $db->prepare($query);
-    $test = $stmt->execute();
-    $test_2 = $stmt->fetchALL(PDO::FETCH_ASSOC); 
-
-    print_r($test);
-    print_r($test_2);
+    $stmt->execute();
+    $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
+   
 }
 
 // INSERT INTO customer (first_Name, last_Name, phone, email) 
@@ -45,7 +45,7 @@ if(!empty($_GET))
 
     <form action="customer.php" method="POST">
   
-     <input type ="text" name ="first" placeholder = "First Name">
+     <input value = "<?php echo $info [0]->first_name?> "type ="text" name ="first" placeholder = "First Name">
      <br>
      <input type ="text" name ="last" placeholder = "Last Name">
      <br>
