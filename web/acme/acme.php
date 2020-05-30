@@ -44,21 +44,11 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             ?> 
             <tr>
-                    <td>
-                    <?php echo $i;  ?>
-                    </td>
-                    <td>
-                    <?php echo $record['first_name']  ?>
-                    </td>
-                    <td>
-                    <?php echo $record['last_name']  ?>
-                    </td>
-                    <td>
-                    <?php echo $record['phone']  ?>
-                    </td>
-                    <td>
-                    <?php echo $record['email']  ?>
-                    </td>
+                    <td> <?php echo $i;?> </td>
+                    <td> <?php echo $record['first_name'] ?> </td>
+                    <td> <?php echo $record['last_name']  ?> </td>
+                    <td> <?php echo $record['phone']      ?> </td>
+                    <td> <?php echo $record['email']      ?> </td>
                     <td>
                           <?php $id = $record['customer_id'] ?>
                           <a href = " <?php echo "customer.php?record=$id"?>"> Edit  </a>
