@@ -63,6 +63,9 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tbody>
 
             </table>
+
+            <a href="logout.php?logout" <button class="btn btn-success mt-3 " name="Logout">Logout</button> </a>
+            
         </div>
         <?php
          /*            
@@ -80,7 +83,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <br/>
 
-        <a href="logout.php?logout" <button class="btn btn-success mt-3 " name="Logout">Logout</button> </a>
+       
           
 
     </body>
