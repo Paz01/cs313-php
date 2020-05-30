@@ -25,7 +25,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <br>
         <div class="container">
             <h3 class="text-center py-3">Control Panel - Acme Enterprises</h3>
-            <a href="customer.php" <button class="btn btn-primary mt-3 " name="Logout">Create customer</button> </a>
+            <a href="customer.php" <button class="btn btn-primary mt-3 " name="Logout"> <div class="float-right">Create customer</div></button> </a>
                 <br>
                     <table class ="table table-hover">
                     
