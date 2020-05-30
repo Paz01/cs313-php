@@ -5,7 +5,7 @@ $db = get_db();
 session_start();
 
 // SELECT customer_id, first_name, last_name FROM customer;
-$query = 'SELECT customer_id, first_name, last_name, phone FROM customer';
+$query = 'SELECT customer_id, first_name, last_name, phone, email FROM customer';
 $stmt = $db->prepare($query);
 $stmt->execute();
 //$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -13,7 +13,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
->
+
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <title>Acme Enterprises</title>
@@ -29,25 +29,13 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <table>
                 <thead>
                     <tr>
-                        <th>
-                            Record
-                        </th>
-                        <th>
-                            firstName
-                        </th>
-                        <th>
-                            LastName
-                        </th>
-                        <th>
-                            Phone
-                        </th>
-                        <th>
-                            Actions 
-                        </th>
+                        <th>Record</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
-
-
         <tbody>
             <?php if (is_array($rows)):
                     $i=1;
