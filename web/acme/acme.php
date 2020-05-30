@@ -27,39 +27,40 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <br>
 
         <table>
-                <thead>
-                    <tr>
-                        <th>Record</th>
-                        <th>FirstName</th>
-                        <th>LastName</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-        <tbody>
-            <?php if (is_array($rows)):
-                    $i=1;
-                    foreach($rows as $record):
+                    <thead>
+                        <tr>
+                            <th>Record</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+            <tbody>
+                     <?php if (is_array($rows)):
+                              $i=1;
+                            foreach($rows as $record):
 
-            ?> 
-            <tr>
-                    <td> <?php echo $i;?> </td>
-                    <td> <?php echo $record['first_name'] ?> </td>
-                    <td> <?php echo $record['last_name']  ?> </td>
-                    <td> <?php echo $record['phone']      ?> </td>
-                    <td> <?php echo $record['email']      ?> </td>
-                    <td>
-                          <?php $id = $record['customer_id'] ?>
-                          <a href = " <?php echo "customer.php?record=$id"?>"> Edit  </a>
-                          <a href = " "> Delete </a>
-                    </td>
-                    
-                    <?php $i++; ?>
-            </tr>
-                    <?php  endforeach;?>
-                    <?php endif; ?>
-        </tbody>
+                     ?> 
+                        <tr>
+                            <td> <?php echo $i;?> </td>
+                            <td> <?php echo $record['first_name'] ?> </td>
+                            <td> <?php echo $record['last_name']  ?> </td>
+                            <td> <?php echo $record['phone']      ?> </td>
+                            <td> <?php echo $record['email']      ?> </td>
+                            <td>
+                                 <?php $id = $record['customer_id'] ?>
+                                 <a href = " <?php echo "customer.php?record=$id"?>"> Edit  </a>
+                                 <a href = " <?php echo "customer.php?record=$id"?>"><button class="btn btn-success mt-3 " name="Edit">Edit</button> </a>
+                                 <a href = " "> Delete </a>
+                            </td>
+                            
+                                <?php $i++; ?>
+                        </tr>
+                                <?php  endforeach;?>
+                                <?php endif; ?>
+            </tbody>
 
         </table>
        
