@@ -21,8 +21,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <link href="css/bootstrap.css" rel="stylesheet">
 
-    <body>
-        <h3>These are the customers of Acme Enterprises</h3>
+    <body style="background:#CCC;">
+        <h3>Control Panel - Acme Enterprises</h3>
         <br>
         
         <div class="container">
@@ -30,8 +30,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <thead>
                             <tr>
                                 <th>Record</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
                                 <th>Phone</th>
                                 <th>Email</th>
                                 <th>Actions</th>

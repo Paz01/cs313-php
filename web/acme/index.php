@@ -34,7 +34,6 @@
                         }
                     ?>
  
- 
                     <?php 
                         if(@$_GET['Invalid']==true)
                         {
