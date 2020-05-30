@@ -51,8 +51,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td> <?php echo $record['email']      ?> </td>
                             <td>
                                  <?php $id = $record['customer_id'] ?>
-                                 <a href = " <?php echo "customer.php?record=$id"?>"> Edit  </a>
-                                 <a href = " <?php echo "customer.php?record=$id"?>"><button class="btn btn-success mt-3 " name="Edit">Edit</button> </a>
+                                 
+                                 <a href = " <?php echo "customer.php?record=$id"?>"><button type="button" class="btn btn-outline-warning">Warning</button> </a>
                                  <a href = " "> Delete </a>
                             </td>
                             
