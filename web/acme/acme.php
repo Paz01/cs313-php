@@ -28,7 +28,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <br>
                     <table class ="table">
                     
-                                <thead class ="thread-dark">
+                                <thead class ="thead-dark">
                                     <tr>
                                         <th>Record</th>
                                         <th>First Name</th>
