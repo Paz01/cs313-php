@@ -68,7 +68,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php echo $record['phone']  ?>
                     </td>
                     <td>
-                          <a href = " "> Edit  </a>
+                          <?php $id = $record['customer_id'] ?>
+                          <a href = " <?php echo "customer.php?record=$id"?>"> Edit  </a>
                           <a href = " "> Delete </a>
                     </td>
                     

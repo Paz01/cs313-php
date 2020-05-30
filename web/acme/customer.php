@@ -18,6 +18,20 @@ if(!empty($_POST))
     $stmt->fetchALL(PDO::FETCH_ASSOC); 
        
 }
+// actualizar un record 
+if(!empty($_GET))
+{
+    $record_id = $_GET['record'];
+    $query = "SELECT * FROM customer WHERE customer_id = $record_id";
+    
+    $stmt = $db->prepare($query);
+    $test = $stmt->execute();
+    $test_2 = $stmt->fetchALL(PDO::FETCH_ASSOC); 
+
+    print_r($test);
+    print_r($test_2);
+}
+
 // INSERT INTO customer (first_Name, last_Name, phone, email) 
 // VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
 
