@@ -33,6 +33,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th>FirstName</th>
                         <th>LastName</th>
                         <th>Phone</th>
+                        <th>Email</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -54,6 +55,9 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </td>
                     <td>
                     <?php echo $record['phone']  ?>
+                    </td>
+                    <td>
+                    <?php echo $record['email']  ?>
                     </td>
                     <td>
                           <?php $id = $record['customer_id'] ?>
