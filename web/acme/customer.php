@@ -44,9 +44,10 @@ if(!empty($_GET))
     <body>
     <div class="container">
             <table class ="table">
+                
                 <form action="customer.php" method="POST">
             
-                <input value = "<?php echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">
+                <input value = "<?php echo $info [1]->first_name?>" type ="text" name ="first" placeholder = "First Name">
                 <br>
                 <input type ="text" name ="last" placeholder = "Last Name">
                 <br>
