@@ -4,7 +4,7 @@ require_once('dbConnect.php');
 $db = get_db();
 
 $info = null;
-
+// insert a Record
 if(!empty($_POST))
 {
     $first = $_POST['first'];
@@ -20,7 +20,7 @@ if(!empty($_POST))
     $stmt->fetchALL(PDO::FETCH_ASSOC); 
        
 }
-// actualizar un record 
+// Update a Record
 if(!empty($_GET))
 {
     $record_id = $_GET['record'];

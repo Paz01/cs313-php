@@ -26,6 +26,9 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <br>
         
         <div class="container">
+        
+        <h3 class="text-center py-3">Acme Enterprises - Login </h3>
+
             <table class ="table">
                         <thead>
                             <tr>
@@ -65,7 +68,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </table>
 
             <a href="logout.php?logout" <button class="btn btn-success mt-3 " name="Logout">Logout</button> </a>
-            
+
         </div>
         <?php
          /*            
