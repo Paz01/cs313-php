@@ -26,7 +26,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="container">
             <h3 class="text-center py-3">Control Panel - Acme Enterprises</h3>
                 <br>
-                    <table class ="table">
+                    <table class ="table table-hover">
                     
                                 <thead class ="thead-dark">
                                     <tr>
