@@ -53,7 +53,7 @@ if(!empty($_GET))
                         <div class="form-group">
                         <label for="First Name">First Name:</label>
                         <input type="text" class="form-control" id="fname" input value = "<?php echo $info [0]->first_name?>"
-                                placeholder="Enter First Name" name="first" required>
+                                placeholder = "Enter First Name" name = "first" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
@@ -61,7 +61,7 @@ if(!empty($_GET))
                         <div class="form-group">
                         <label for="Last Name">Last Name:</label>
                         <input type="text" class="form-control" id="lname" input value = " "
-                                placeholder="Enter Last Name" name="last" required>
+                                placeholder = "Enter Last Name" name = "last" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
