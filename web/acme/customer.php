@@ -42,21 +42,23 @@ if(!empty($_GET))
       <title>Customers </title>
     </head>
     <body>
-
-    <form action="customer.php" method="POST">
-  
-     <input value = "<?php echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">
-     <br>
-     <input type ="text" name ="last" placeholder = "Last Name">
-     <br>
-     <input type ="text" name ="phone" placeholder = "Phone">
-     <br>
-     <input type ="text" name ="email" placeholder = "E-mail">
-     <br>
-     <button type = "Insert" name = "Insert"> Insert </button>
-     
-    </form>
-
+    <div class="container">
+            <table class ="table">
+                <form action="customer.php" method="POST">
+            
+                <input value = "<?php echo $info [0]->first_name?>" type ="text" name ="first" placeholder = "First Name">
+                <br>
+                <input type ="text" name ="last" placeholder = "Last Name">
+                <br>
+                <input type ="text" name ="phone" placeholder = "Phone">
+                <br>
+                <input type ="text" name ="email" placeholder = "E-mail">
+                <br>
+                <button type = "Insert" name = "Insert"> Insert </button>
+                
+                </form>
+            </table>
+    </div>
         
     </body>
 </html>
