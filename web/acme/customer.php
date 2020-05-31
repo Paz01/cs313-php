@@ -55,7 +55,7 @@ if(!empty($_GET))
 
                         <div class="form-group">
                         <label for="First Name">First Name:</label>
-                        <input type="text" class="form-control" id="fname" input value = "<?php echo $info [0]->first_name?>"
+                        <input type="text" class="form-control" id="fname" input value = "<?php echo $info [0]->first?>"
                                 placeholder = "Enter First Name" name = "first" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
