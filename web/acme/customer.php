@@ -36,6 +36,7 @@ elseif(!empty($_GET) && !empty($_POST))
     $last = $_POST['last'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
+
     $record_id = $_GET['record'];
     $query ="UPDATE customer SET first_name='$first', last_name='$last', phone='$phone', email='$email'
                 WHERE customer_id=$record_id;";
@@ -71,9 +72,11 @@ elseif(!empty($_GET) && !empty($_POST))
               <!-- <pre> <?php //print_r($test); ?> </pre> --> <!--for debugging purposes only-->
                
                 <table class ="table">
-                    
+                    <?php if (!empty($_GET)): ?>
                     <form action='<?php echo "customer.php?record=$record_id" ?>' method="POST">
-
+                    <?php else: ?>
+                    <form action='<?php echo "customer.php" ?>' method="POST">
+                    <?php endif; ?>
                         <div class="form-group">
                         <label for="First Name">First Name:</label>
                         <input type="text" class="form-control" id="fname" value = "<?php echo $info [0]['first_name']?>"
