@@ -68,7 +68,7 @@ elseif(!empty($_GET) && !empty($_POST))
             <h4 class="text-center py-3">Customer information
 
             <a href="acme.php" class="btn btn-success mt-3 float-right" name="Control">Control Panel </a> </h4>
-               <pre> <?php print_r($test); ?> </pre> <!--for debugging purposes only-->
+              <!-- <pre> <?php //print_r($test); ?> </pre> --> <!--for debugging purposes only-->
                
                 <table class ="table">
                     
