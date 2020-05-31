@@ -37,9 +37,11 @@ elseif(!empty($_GET) && !empty($_POST))
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     
-    $query ="UPDATE customers SET first_name='$first', last_name='$last', phone='$phone', email='$email'
+    $query ="UPDATE customer SET first_name='$first', last_name='$last', phone='$phone', email='$email'
                 WHERE customer_id=$record_id;";
     
+    //UPDATE customer SET first_name= 'James' WHERE customer_id=7;
+
     $stmt = $db->prepare($query);
     
     $test = $stmt->execute();
