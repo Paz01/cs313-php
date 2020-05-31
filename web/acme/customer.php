@@ -37,14 +37,14 @@ elseif(!empty($_GET) && !empty($_POST))
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     
-    $query ="UPDATE customers SET first_name=$first, last_name=$last, phone=$phone, email=$email
+    $query ="UPDATE customers SET first_name='$first', last_name='$last', phone='$phone', email='$email'
                 WHERE customer_id=$record_id;";
     
     $stmt = $db->prepare($query);
     
     $test = $stmt->execute();
     $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
-    $test_2 = $stmt->fetchALL(PDO::FETCH_ASSOC); 
+
 }
 
 ?>
@@ -65,9 +65,9 @@ elseif(!empty($_GET) && !empty($_POST))
         <div class="container">
             <h4 class="text-center py-3">Customer information
 
-            <a href="acme.php" <button class="btn btn-success mt-3 float-right" name="Control">Control Panel</button> </a> </h4>
+            <a href="acme.php" class="btn btn-success mt-3 float-right" name="Control">Control Panel </a> </h4>
                <pre> <?php print_r($test); ?> </pre> <!--for debugging purposes only-->
-               <pre> <?php print_r($test_2); ?> </pre>
+               
                 <table class ="table">
                     
                     <form action='<?php echo "customer.php?record=$record_id" ?>' method="POST">
