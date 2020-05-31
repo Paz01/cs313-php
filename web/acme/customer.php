@@ -19,7 +19,7 @@ if(!empty($_POST) && empty($_GET))
     $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
 // Look a record a Record
-elseif(!empty($_GET))
+elseif(!empty($_GET) && empty($_POST))
 {
     $record_id = $_GET['record'];
     $query = "SELECT * FROM customer WHERE customer_id = $record_id";
