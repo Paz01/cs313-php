@@ -46,6 +46,9 @@ if(!empty($_GET))
     <body style="background:#CCC;">
         <div class="container">
             <h4 class="text-center py-3">Customer information</h4>
+            
+            <a href="acme.php" <button class="btn btn-success mt-3 float-right" name="Control">Control Panel</button> </a>
+                
                 <table class ="table">
                     
                     <form action="customer.php" method="POST">
@@ -94,7 +97,7 @@ if(!empty($_GET))
                   
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    <a href="acme.php" <button class="btn btn-success mt-3 float-right" name="Control">Control Panel</button> </a>
+                    
                 </table>
         </div>
         
