@@ -3,7 +3,7 @@ require_once('dbConnect.php');
 $db = get_db();
 
 $info = null;
-// insert a Record
+// insert a new Record
 if(!empty($_POST))
 {
     $first = $_POST['first'];
@@ -18,8 +18,8 @@ if(!empty($_POST))
     $stmt->execute();
     $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
-// Update a Record
-if(!empty($_GET))
+// Look a record a Record
+elseif(!empty($_GET))
 {
     $record_id = $_GET['record'];
     $query = "SELECT * FROM customer WHERE customer_id = $record_id";
@@ -30,7 +30,23 @@ if(!empty($_GET))
 }
 // INSERT INTO customer (first_Name, last_Name, phone, email) 
 // VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
+elseif(!empty($_GET) && !empty($_POST))
+{
+    $first = $_POST['first'];
+    $last = $_POST['last'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    
+    $query ="UPDATE customers SET first_name=$first, last_name=$last, phone=$phone, email=$email
+                WHERE customer_id=$record_id;";
+    
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
+}
+
 ?>
+//
 
 <!DOCTYPE html>
 <head>
@@ -48,8 +64,7 @@ if(!empty($_GET))
             <h4 class="text-center py-3">Customer information
 
             <a href="acme.php" <button class="btn btn-success mt-3 float-right" name="Control">Control Panel</button> </a> </h4>
-               <pre> 
-                <?php print_r($info); ?> </pre>
+               <!--<pre> <?php //print_r($info); ?> </pre> for debugging purposes only-->
                 <table class ="table">
                     
                     <form action="customer.php" method="POST">
