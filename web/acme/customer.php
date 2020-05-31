@@ -67,7 +67,7 @@ elseif(!empty($_GET) && !empty($_POST))
                <!--<pre> <?php //print_r($info); ?> </pre> for debugging purposes only-->
                 <table class ="table">
                     
-                    <form action="customer.php" method="POST">
+                    <form action='<?php echo "customer.php?record=$record_id" ?>' method="POST">
 
                         <div class="form-group">
                         <label for="First Name">First Name:</label>
