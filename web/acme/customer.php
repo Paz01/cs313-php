@@ -4,7 +4,7 @@ $db = get_db();
 
 $info = null;
 // insert a new Record
-if(!empty($_POST))
+if(!empty($_POST) && empty($_GET))
 {
     $first = $_POST['first'];
     $last = $_POST['last'];
@@ -46,7 +46,7 @@ elseif(!empty($_GET) && !empty($_POST))
 }
 
 ?>
-//
+
 
 <!DOCTYPE html>
 <head>
