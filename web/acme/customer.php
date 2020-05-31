@@ -48,7 +48,8 @@ if(!empty($_GET))
             <h4 class="text-center py-3">Customer information
 
             <a href="acme.php" <button class="btn btn-success mt-3 float-right" name="Control">Control Panel</button> </a> </h4>
-                
+               <pre> 
+                <?php print_r($info); ?> </pre>
                 <table class ="table">
                     
                     <form action="customer.php" method="POST">
