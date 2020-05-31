@@ -41,8 +41,10 @@ elseif(!empty($_GET) && !empty($_POST))
                 WHERE customer_id=$record_id;";
     
     $stmt = $db->prepare($query);
-    $stmt->execute();
+    
+    $test = $stmt->execute();
     $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
+    $test_2 = $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
 
 ?>
@@ -64,7 +66,8 @@ elseif(!empty($_GET) && !empty($_POST))
             <h4 class="text-center py-3">Customer information
 
             <a href="acme.php" <button class="btn btn-success mt-3 float-right" name="Control">Control Panel</button> </a> </h4>
-               <!--<pre> <?php //print_r($info); ?> </pre> for debugging purposes only-->
+               <pre> <?php print_r($test); ?> </pre> <!--for debugging purposes only-->
+               <pre> <?php print_r($test_2); ?> </pre>
                 <table class ="table">
                     
                     <form action='<?php echo "customer.php?record=$record_id" ?>' method="POST">
