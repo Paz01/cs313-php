@@ -43,7 +43,7 @@ if(!empty($_GET))
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!--<link href="css/bootstrap.css" rel="stylesheet"> -->
 
-    <body>
+    <body style="background:#CCC;">
         <div class="container">
             <h4 class="text-center py-3">Customer information</h4>
                 <table class ="table">
