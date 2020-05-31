@@ -45,9 +45,9 @@ if(!empty($_GET))
 
     <body style="background:#CCC;">
         <div class="container">
-            <h4 class="text-center py-3">Customer information</h4>
-            
-            <a href="acme.php" <button class="btn btn-success mt-3 float-right" name="Control">Control Panel</button> </a>
+            <h4 class="text-center py-3">Customer information
+
+            <a href="acme.php" <button class="btn btn-success mt-3 float-right" name="Control">Control Panel</button> </a> </h4>
                 
                 <table class ="table">
                     
