@@ -56,7 +56,7 @@ if(!empty($_GET))
 
                         <div class="form-group">
                         <label for="First Name">First Name:</label>
-                        <input type="text" class="form-control" id="fname" input value = "<?php echo $info [0]['first_name']?>"
+                        <input type="text" class="form-control" id="fname" value = "<?php echo $info [0]['first_name']?>"
                                 placeholder = "Enter First Name" name = "first" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -64,7 +64,7 @@ if(!empty($_GET))
 
                         <div class="form-group">
                         <label for="Last Name">Last Name:</label>
-                        <input type="text" class="form-control" id="lname" input value = "<?php ?> "
+                        <input type="text" class="form-control" id="lname" value = "<?php echo $info [0]['last_name']?>"
                                 placeholder = "Enter Last Name" name = "last" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -72,7 +72,7 @@ if(!empty($_GET))
 
                         <div class="form-group">
                         <label for="Phone">Phone:</label>
-                        <input type="text" class="form-control" id="phone" input value = "<?php ?> "
+                        <input type="text" class="form-control" id="phone" value = "<?php echo $info [0]['phone']?>"
                                 placeholder = "Enter Phone Number" name = "phone" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -80,7 +80,7 @@ if(!empty($_GET))
 
                         <div class="form-group">
                         <label for="E-mail">E-mail:</label>
-                        <input type="text" class="form-control" id="email" input value = "<?php ?> "
+                        <input type="text" class="form-control" id="email" value = "<?php echo $info [0]['email']?>"
                                 placeholder = "Enter E-mail Address" name = "email" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
