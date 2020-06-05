@@ -18,7 +18,7 @@ if(!empty($_POST) && empty($_GET))
     $stmt->execute();
     $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
-// Look a record a Record
+// Look up a record
 elseif(!empty($_GET) && empty($_POST))
 {
     $record_id = $_GET['record'];
@@ -30,6 +30,7 @@ elseif(!empty($_GET) && empty($_POST))
 }
 // INSERT INTO customer (first_Name, last_Name, phone, email) 
 // VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
+// Update an existing record. 
 elseif(!empty($_GET) && !empty($_POST))
 {
     $first = $_POST['first'];
@@ -47,11 +48,8 @@ elseif(!empty($_GET) && !empty($_POST))
     
     $test = $stmt->execute();
     $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
-
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <head>
