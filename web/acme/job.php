@@ -49,6 +49,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <th>Customer</th>
                                         <th>Service</th>
                                         <th>Employee</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                         <tbody>
