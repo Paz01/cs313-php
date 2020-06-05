@@ -12,6 +12,16 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<script>
+function confirmationDelete(anchor)
+{
+   var conf = confirm('Are you sure want to delete this record?');
+   if(conf)
+      window.location=anchor.attr("href");
+}
+</script>
+
+
 <!DOCTYPE html>
 
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
@@ -55,7 +65,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <?php $id = $record['customer_id'] ?>
                                             
                                             <a href = " <?php echo "customer.php?record=$id"?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                            <a href = " <?php echo "delete.php?record=$id"?>">  <button type="button" class="btn btn-danger ">Delete</button> </a>
+                                            <a onclick='javascript:confirmationDelete($(this)); href = " <?php echo "delete.php?record=$id"?>">  <button type="button" class="btn btn-danger ">Delete</button> </a>
                                         </td>
                                             <?php $i++; ?>
                                     </tr>
@@ -84,7 +94,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <br/>
 
-       
+        
           
 
     </body>
