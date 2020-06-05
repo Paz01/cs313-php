@@ -3,9 +3,9 @@ require ('dbConnect.php');
 $db = get_db();
 
 session_start();
-
+// SELECT * FROM JOB ORDER BY price DESC LIMIT 10;
 // SELECT customer_id, first_name, last_name FROM customer;
-$query = 'SELECT customer_id, first_name, last_name, phone, email FROM customer';
+$query = 'SELECT job_id, notes, price, customer_id, service_id, employee_id FROM job';
 $stmt = $db->prepare($query);
 $stmt->execute();
 //$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -36,19 +36,19 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <body style="background:#CCC;">
       <br>
         <div class="container">
-            <h3 class="text-center py-3">Customer Control Panel - Acme Enterprises
-            <a href="customer.php" <button class="btn btn-primary mt-3 float-right" name="Create">Create new Customer </button> </a> </h3>
+            <h3 class="text-center py-3">Job Control Panel - Acme Enterprises
+            <a href="order.php" <button class="btn btn-primary mt-3 float-right" name="Create">Create new Job order </button> </a> </h3>
                 <br>
                     <table class ="table table-hover">
                     
                                 <thead class ="thead-dark">
                                     <tr>
                                         <th>Record</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Phone</th>
-                                        <th>Email</th>
-                                        <th>Actions</th>
+                                        <th>Notes</th>
+                                        <th>Price</th>
+                                        <th>Customer</th>
+                                        <th>Service</th>
+                                        <th>Employee</th>
                                     </tr>
                                 </thead>
                         <tbody>
@@ -59,14 +59,15 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 ?> 
                                     <tr>
                                         <td> <?php echo $i;?> </td>
-                                        <td> <?php echo $record['first_name'] ?> </td>
-                                        <td> <?php echo $record['last_name']  ?> </td>
-                                        <td> <?php echo $record['phone']      ?> </td>
-                                        <td> <?php echo $record['email']      ?> </td>
+                                        <td> <?php echo $record['notes']      ?> </td>
+                                        <td> <?php echo $record['price']      ?> </td>
+                                        <td> <?php echo $record['customer_id']?> </td>
+                                        <td> <?php echo $record['service_id'] ?> </td>
+                                        <td> <?php echo $record['employee_id']?> </td>
                                         <td>
-                                            <?php $id = $record['customer_id'] ?>
+                                            <?php $id = $record['job_id'] ?>
                                             
-                                            <a href = " <?php echo "customer.php?record=$id"?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                                            <a href = " <?php echo "order.php?record=$id"?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                             <a onclick='confirmationDelete(this);return false;' href = " <?php echo "delete.php?record=$id"?>">  <button type="button" class="btn btn-danger ">Delete</button> </a>
                                         </td>
                                             <?php $i++; ?>
@@ -81,16 +82,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         </div>
         <?php
-         /*            
-
-            foreach ($rows as $row)
-            {
-                echo "<p>" . "First Name: " . $row['first_name'] . "</P>" .
-                     "<p>" . "Last Name: " . $row['last_name'] . "</p>" . 
-                     "<p>" . "Phone: " . $row['phone'] . "</p>";
-                echo "----------------------------";
-            }
-            */
+         
         ?>
               
 
