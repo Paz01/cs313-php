@@ -22,9 +22,9 @@
              
 
         echo '<a href="job.php?Job Control Panel" <button class="btn btn-success mt-3 " name="Job Control Panel">Job Control Panel</button></a>';
-
+        echo '<br/>';
         echo '<a href="acme.php?Control Panel" <button class="btn btn-success mt-3 " name="Customer Control Panel">Customer Control Panel</button></a>';
-        
+        echo '<br/>';
         echo '<a href="logout.php?logout" <button class="btn btn-primary mt-3 " name="Logout">Logout</button></a>';
     }
     else
