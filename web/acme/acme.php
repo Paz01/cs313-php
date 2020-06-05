@@ -18,10 +18,9 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
    var conf = confirm('Are you sure want to delete this record?');
    if(conf)
       window.location=anchor.attr("href");
-}
-//onclick='confirmationDelete(this);return false;'
-//onclick='javascript:confirmationDelete($(this)); 
 
+      // onclick='confirmationDelete(this);return false;'  //-->> We use this line to insert the call on the href click below
+}
 </script>
 
 
