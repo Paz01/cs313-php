@@ -6,9 +6,9 @@ $db = get_db();
     if(!empty($_GET))
     {
         $record_id = $_GET ['record'];
-        print_r($record_id);
+        //print_r($record_id);
 
-        $query = "DELETE FROM customer WHERE id=$record_id;";
+        $query = "DELETE FROM customer WHERE customer_id = $record_id;";
 
         $stmt = $db->prepare($query);
         $stmt->execute();
