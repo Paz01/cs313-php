@@ -58,7 +58,7 @@ elseif(!empty($_GET) && !empty($_POST))
 require_once('dbConnect.php');
 $db = get_db();
 
-$query = 'SELECT first_name, FROM customer';
+$query = 'SELECT first_name FROM customer';
 $stmt = $db->prepare($query);
 $stmt->execute();
 print_r($stmt);
