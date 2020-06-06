@@ -61,9 +61,10 @@ $db = get_db();
 $query = 'SELECT first_name, FROM customer';
 $stmt = $db->prepare($query);
 $stmt->execute();
+print_r($stmt);
 //$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-print_r($rows);
+
 ?>
 <!DOCTYPE html>
 <head>
