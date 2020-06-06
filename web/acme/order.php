@@ -109,9 +109,9 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 if ($rows)
                                 {
                                    // print_r($rows);
-                                   while ($row=$rows)
+                                  while ($row=$rows)
                                    {
-                                     $cust_name = $row["$first_name"];
+                                     $cust_name = $row["$first_Name"];
                                     echo "<option>$cust_name<br></option>";  
                                     }
                                 }                                
