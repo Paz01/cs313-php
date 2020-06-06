@@ -63,7 +63,7 @@ $stmt = $db->prepare($query);
 $stmt->execute();
 //$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+print_r($rows);
 ?>
 <!DOCTYPE html>
 <head>
