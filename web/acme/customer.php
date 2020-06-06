@@ -64,7 +64,7 @@ elseif(!empty($_GET) && !empty($_POST))
 
     <body style="background:#CCC;">
         <div class="container">
-            <h4 class="text-center py-3">Customer information
+            <h4 class="text-center py-3">Customer Information
 
             <a href="acme.php" class="btn btn-success mt-3 float-right" name="Control">Back to Customer Control Panel </a> </h4>
               <!-- <pre> <?php //print_r($test); ?> </pre> --> <!--for debugging purposes only-->

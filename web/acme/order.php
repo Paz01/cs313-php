@@ -4,7 +4,7 @@ $db = get_db();
 
 $info = null;
 // insert a new Record
-if(!empty($_POST) && empty($_GET))
+//if(!empty($_POST) && empty($_GET))
 {
     $first = $_POST['first'];
     $last = $_POST['last'];
@@ -19,7 +19,7 @@ if(!empty($_POST) && empty($_GET))
     $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
 // Look up a record
-elseif(!empty($_GET) && empty($_POST))
+//elseif(!empty($_GET) && empty($_POST))
 {
     $record_id = $_GET['record'];
     $query = "SELECT * FROM customer WHERE customer_id = $record_id";
@@ -31,7 +31,8 @@ elseif(!empty($_GET) && empty($_POST))
 // INSERT INTO customer (first_Name, last_Name, phone, email) 
 // VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
 // Update an existing record. 
-elseif(!empty($_GET) && !empty($_POST))
+
+//elseif(!empty($_GET) && !empty($_POST))
 {
     $first = $_POST['first'];
     $last = $_POST['last'];
@@ -49,7 +50,7 @@ elseif(!empty($_GET) && !empty($_POST))
     $test = $stmt->execute();
     $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
-?>
+?> 
 
 <!DOCTYPE html>
 <head>
@@ -64,7 +65,7 @@ elseif(!empty($_GET) && !empty($_POST))
 
     <body style="background:#CCC;">
         <div class="container">
-            <h4 class="text-center py-3">Customer information
+            <h4 class="text-center py-3">Job Order Information
 
             <a href="job.php" class="btn btn-success mt-3 float-right" name="Control">Back to Job Control Panel </a> </h4>
               <!-- <pre> <?php //print_r($test); ?> </pre> --> <!--for debugging purposes only-->
