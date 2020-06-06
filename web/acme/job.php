@@ -67,10 +67,10 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <td> <?php echo $i;?> </td>
                                         <td> <?php echo $record['notes']      ?> </td>
                                         <td> <?php echo $record['price']      ?> </td>
-                                        <td> <?php echo $record['first_Name']?> </td>
-                                        <td> <?php echo $record['last_Name']?> </td>
+                                        <td> <?php echo $record['first_name']?> </td>
+                                        <td> <?php echo $record['last_name']?> </td>
                                         <td> <?php echo $record['type_of_service'] ?> </td>
-                                        <td> <?php echo $record['e_user_name ']?> </td>
+                                        <td> <?php echo $record['employee_name']?> </td>
                                         <td>
                                             <?php $id = $record['job_id'] ?>
                                             

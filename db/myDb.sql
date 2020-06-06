@@ -61,16 +61,17 @@ INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('Ea
 -- SELECT customer_id, first_name, last_name, phone FROM customer'; 
 
 -- SELECT type_of_service FROM service;
-
+/*
 -- this query will display everything from job + customer + service + employee 
 SELECT job.* , customer.*, service.*, employee.*, employee.e_user_name AS employee_name 
 FROM job INNER JOIN customer ON customer.customer_id = job.customer_id 
 INNER JOIN employee ON employee.employee_id = job.employee_id 
 INNER JOIN service ON service.service_id = job.service_id;
+*/
 
-
+/*
 SELECT job.notes, job.price, customer.first_Name, customer.last_Name, service.type_of_service, employee.e_user_name AS employee_name 
 FROM job INNER JOIN customer ON customer.customer_id = job.customer_id 
 INNER JOIN employee ON employee.employee_id = job.employee_id 
 INNER JOIN service ON service.service_id = job.service_id;
-
+*/
