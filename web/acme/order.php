@@ -54,6 +54,17 @@ elseif(!empty($_GET) && !empty($_POST))
 */
 ?> 
 
+<?php 
+require_once('dbConnect.php');
+$db = get_db();
+
+$query = 'SELECT first_name, FROM customer';
+$stmt = $db->prepare($query);
+$stmt->execute();
+//$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
 <!DOCTYPE html>
 <head>
   <title>Job Orders</title>
@@ -93,7 +104,17 @@ elseif(!empty($_GET) && !empty($_POST))
                         <div class="form-group">
                         <label for="Customer">Customer (select one):</label>
                             <select class="form-control" id="Customer">
-                                <option>1</option>
+                                <?php 
+                                if ($rows)
+                                {
+                                    while ($row = $rows)
+                                    {
+                                        $cust_name = $row["$first_name"];
+                                        echo "<option>$cust_name<br></option>";  
+                                    }
+                                } 
+                                
+                                ?>
                             </select>
                         </div> 
                         
@@ -104,8 +125,6 @@ elseif(!empty($_GET) && !empty($_POST))
                             </select>
                         </div> 
                         
-
-
                         <!-- 
                         </div>
 
