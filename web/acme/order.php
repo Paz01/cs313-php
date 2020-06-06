@@ -107,13 +107,13 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?php 
                                 if ($rows)
                                 {
-                                    while ($row = $rows)
-                                    {
-                                        $cust_name = $row["$first_name"];
-                                        echo "<option>$cust_name<br></option>";  
-                                    }
-                                } 
-                                
+                                    print_r($rows);
+                                   // while ($row=$rows)
+                                    //{
+                                      //  $cust_name = $row["$first_name"];
+                                        //echo "<option>$cust_name<br></option>";  
+                                    //}
+                                }                                
                                 ?>
                             </select>
                         </div> 
