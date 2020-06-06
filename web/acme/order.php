@@ -91,16 +91,19 @@ elseif(!empty($_GET) && !empty($_POST))
                         </div>
 
                         <div class="form-group">
-                        <label for="sel1">Customer (select one):</label>
-                            <select class="form-control" id="sel1">
+                        <label for="Customer">Customer (select one):</label>
+                            <select class="form-control" id="Customer">
                                 <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
                             </select>
                         </div> 
                         
-
+                        <div class="form-group">
+                        <label for="Service">Service (select one):</label>
+                            <select class="form-control" id="Service">
+                                <option>1</option>
+                            </select>
+                        </div> 
+                        
 
 
                         <!-- 
