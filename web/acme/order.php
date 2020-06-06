@@ -58,13 +58,13 @@ elseif(!empty($_GET) && !empty($_POST))
 require_once('dbConnect.php');
 $db = get_db();
 
-$query = 'SELECT first_name FROM customer';
+$query = 'SELECT first_Name FROM customer';
 $stmt = $db->prepare($query);
 $stmt->execute();
-// print_r($stmt); only for debugging purposes to see what we are fetching.
+ print_r($stmt); // only for debugging purposes to see what we are fetching.
 //$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+print_r($rows);
 ?>
 <!DOCTYPE html>
 <head>
