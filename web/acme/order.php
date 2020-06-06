@@ -1,4 +1,5 @@
 <?php 
+/*
 require_once('dbConnect.php');
 $db = get_db();
 
@@ -50,11 +51,12 @@ elseif(!empty($_GET) && !empty($_POST))
     $test = $stmt->execute();
     $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
+*/
 ?> 
 
 <!DOCTYPE html>
 <head>
-  <title>Customers</title>
+  <title>Job Orders</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
