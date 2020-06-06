@@ -106,7 +106,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <label for="Customer">Customer (select one):</label>
                             <select class="form-control" id="Customer">
                                 <?php 
-                                if ($rows)
+                               /* if ($rows)
                                 {
                                    // print_r($rows);
                                   while ($row=$rows)
@@ -114,7 +114,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                      $cust_name = $row["$first_Name"];
                                     echo "<option>$cust_name<br></option>";  
                                     }
-                                }                                
+                                }    */                             
                                 ?>
                             </select>
                         </div> 
