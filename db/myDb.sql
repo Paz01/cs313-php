@@ -37,20 +37,20 @@ CREATE TABLE job
     service_id INT REFERENCES service (service_id),
     employee_id INT REFERENCES employee (employee_id)
 );
-------------------- INSERTION CUSTOMER ----------------------
+------------------- INSERTION CUSTOMER - Initial values  ----------------------
 INSERT INTO customer (first_Name, last_Name, phone, email) VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
 INSERT INTO customer (first_Name, last_Name, phone, email) VALUES ('Jane', 'Doe', '812-123-1528', 'Doe@gmail.com');
 INSERT INTO customer (first_Name, last_Name, phone, email) VALUES ('Donald', 'Duck', '812-147-7814', 'Duck@gmail.com');
 
--------------------- INSERTION SERVICE ---------------------
+-------------------- INSERTION SERVICE - Initial Values -----------------------
 INSERT INTO service (type_of_service) VALUES ('Cut lawn');
 INSERT INTO service (type_of_service) VALUES ('Debris removal'); 
 INSERT INTO service (type_of_service) VALUES ('Leaves removal'); 
 
--------------------- INSERTION SERVICE ---------------------
+-------------------- INSERTION SERVICE ---------------------------------------
 INSERT INTO employee (e_user_name, e_password) VALUES ('Admin', 'Admin1');
 
--------------------- INSERTION JOB ---------------------
+-------------------- INSERTION JOB - Initial values --------------------------
 INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('The job went smooth', '75.00',1,1,1);
 INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('The job went fine', '105.00',1,1,1);
 INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('The job went ok', '50.00',1,2,1);
@@ -69,7 +69,9 @@ INNER JOIN employee ON employee.employee_id = job.employee_id
 INNER JOIN service ON service.service_id = job.service_id;
 */
 
-/*
+/*  This query will display the list of job tickets. the notes for each job, the price charged to a customer, 
+//  The first and Last Name of the customer, The service performed for the customer, and the Employee who entered the record.
+
 SELECT job.notes, job.price, customer.first_Name, customer.last_Name, service.type_of_service, employee.e_user_name AS employee_name 
 FROM job INNER JOIN customer ON customer.customer_id = job.customer_id 
 INNER JOIN employee ON employee.employee_id = job.employee_id 

@@ -82,14 +82,28 @@ elseif(!empty($_GET) && !empty($_POST))
                         <label for="Notes">Notes:</label>
                         <input type="text" class="form-control" id="note" value = "<?php //echo $info [0]['first_name'] ?>"
                                 placeholder = "Enter notes about the job" name = "notes" required>
-                        
                         </div>
 
                         <div class="form-group">
                         <label for="Price">Price:</label>
                         <input type="text" class="form-control" id="price" value = "<?php //echo $info [0]['last_name']?>"
                                 placeholder = "Enter the price" name = "price" required>
-                        <!--
+                        </div>
+
+                        <div class="form-group">
+                        <label for="sel1">Customer (select one):</label>
+                            <select class="form-control" id="sel1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div> 
+                        
+
+
+
+                        <!-- 
                         </div>
 
                         <div class="form-group">
