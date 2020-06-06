@@ -4,7 +4,7 @@ $db = get_db();
 
 $info = null;
 // insert a new Record
-//if(!empty($_POST) && empty($_GET))
+if(!empty($_POST) && empty($_GET))
 {
     $first = $_POST['first'];
     $last = $_POST['last'];
@@ -19,7 +19,7 @@ $info = null;
     $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
 // Look up a record
-//elseif(!empty($_GET) && empty($_POST))
+elseif(!empty($_GET) && empty($_POST))
 {
     $record_id = $_GET['record'];
     $query = "SELECT * FROM customer WHERE customer_id = $record_id";
@@ -32,7 +32,7 @@ $info = null;
 // VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
 // Update an existing record. 
 
-//elseif(!empty($_GET) && !empty($_POST))
+elseif(!empty($_GET) && !empty($_POST))
 {
     $first = $_POST['first'];
     $last = $_POST['last'];
