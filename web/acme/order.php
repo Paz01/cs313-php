@@ -64,7 +64,7 @@ $stmt->execute();
  //print_r($stmt); // only for debugging purposes to see what we are fetching.
 //$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-print_r($rows);
+//print_r($rows); // only for debugging purposes to see what we are fetching.
 ?>
 <!DOCTYPE html>
 <head>
@@ -108,12 +108,12 @@ print_r($rows);
                                 <?php 
                                 if ($rows)
                                 {
-                                    print_r($rows);
-                                   // while ($row=$rows)
-                                    //{
-                                      //  $cust_name = $row["$first_name"];
-                                        //echo "<option>$cust_name<br></option>";  
-                                    //}
+                                   // print_r($rows);
+                                   while ($row=$rows)
+                                   {
+                                     $cust_name = $row["$first_name"];
+                                    echo "<option>$cust_name<br></option>";  
+                                    }
                                 }                                
                                 ?>
                             </select>
