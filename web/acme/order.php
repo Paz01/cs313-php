@@ -101,7 +101,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <input type="text" class="form-control" id="price" value = "<?php //echo $info [0]['last_name']?>"
                                 placeholder = "Enter the price" name = "price" required>
                         </div>
-
+                        <!--
                         <div class="form-group">
                         <label for="Customer">Customer (select one):</label>
                             <select class="form-control" id="Customer">
