@@ -18,7 +18,7 @@ $db = get_db();
 
         if($is_deleted)
         {
-            echo "Your record has been deleted";
+            echo '<h2>Your record has been deleted</h2>';
         }
         else
         {
