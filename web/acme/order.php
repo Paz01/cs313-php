@@ -104,18 +104,16 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         
                         <div class="form-group">
                         <label for="Customer">Customer (select one):</label>
-                            <select class="form-control" id="Customer">
+                            <select class="form-control" id="Customer" name ="customer_name">
+                                <!-- // print_r($rows); -->
                                 <?php 
-                                 if ($rows)
-                                {
-                                   // print_r($rows);
-                                  foreach ($row as $rows)
-                                   {
-                                     $cust_name = $rows["$first_Name"];
-                                    echo "<option>$cust_name<br></option>";  
-                                    }
-                                }                               
+                                  foreach ($rows as $key => $data):                                                
                                 ?>
+                                <option value = "<?php echo $data ['customer_id'] ?>">
+                                    
+                                    <?php echo $data ['first_Name'] ?>
+                                </option>
+                                  <?php endforeach;?>
                             </select>
                         </div> 
                         
