@@ -2,18 +2,19 @@
 
 require_once('dbConnect.php');
 $db = get_db();
-/*
+
 $info = null;
 // insert a new Record
 if(!empty($_POST) && empty($_GET))
 {
-    $first = $_POST['first'];
-    $last = $_POST['last'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-
-    $query = "INSERT INTO customer (first_Name, last_Name, phone, email) 
-              VALUES ('$first', '$last', '$phone', '$email');";
+    $notes = $_POST['notes'];
+    $price = $_POST['price'];
+    $customer_name = $_POST['customer_name'];
+    $service_name = $_POST['service_name'];
+    
+    //INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('The job went smooth', '75.00',1,1,1);
+    $query = "INSERT INTO job (notes, price, customer_id, service_id) 
+              VALUES ('$notes', '$price', '$customer_name', '$service_name');";
 
     $stmt = $db->prepare($query);
     $stmt->execute();
@@ -97,16 +98,17 @@ $rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
                     <?php else: ?>
                     <form action='<?php echo "order.php" ?>' method="POST">
                     <?php endif; ?>
+
                         <div class="form-group">
-                        <label for="Notes">Notes:</label>
-                        <input type="text" class="form-control" id="note" value = "<?php //echo $info [0]['first_name'] ?>"
-                                placeholder = "Enter notes about the job" name = "notes" required>
+                            <label for="Notes">Notes:</label>
+                                <input type="text" class="form-control" id="note" value = "<?php //echo $info [0]['first_name'] ?>"
+                                        placeholder = "Enter notes about the job" name = "notes" required>
                         </div>
 
                         <div class="form-group">
-                        <label for="Price">Price:</label>
-                        <input type="text" class="form-control" id="price" value = "<?php //echo $info [0]['last_name']?>"
-                                placeholder = "Enter the price" name = "price" required>
+                            <label for="Price">Price:</label>
+                                <input type="text" class="form-control" id="price" value = "<?php //echo $info [0]['last_name']?>"
+                                        placeholder = "Enter the price" name = "price" required>
                         </div>
                         
                         <div class="form-group">
