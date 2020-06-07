@@ -1,8 +1,8 @@
 <?php 
-/*
+
 require_once('dbConnect.php');
 $db = get_db();
-
+/*
 $info = null;
 // insert a new Record
 if(!empty($_POST) && empty($_GET))
@@ -19,6 +19,7 @@ if(!empty($_POST) && empty($_GET))
     $stmt->execute();
     $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
+/*
 // Look up a record
 elseif(!empty($_GET) && empty($_POST))
 {
@@ -70,10 +71,7 @@ $query = ' SELECT service_id, type_of_service FROM service';
 $stmt1 = $db->prepare($query);
 $stmt1->execute();
 $rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
-
-
 
 <!DOCTYPE html>
 <head>
@@ -112,57 +110,31 @@ $rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         
                         <div class="form-group">
-                        <label for="Customer">Customer (select one):</label>
-                            <select class="form-control" id="Customer" name ="customer_name">
-                                <!-- // print_r($rows); -->
-                                <?php 
-                                print_r($rows);
-                                  foreach ($rows as $key => $data):                                                
-                                ?>
-                                <option value = "<?php echo $data ['customer_id'] ?>">
-                                    
-                                    <?php echo $data ['first_name'] ?>
-                                </option>
-                                  <?php endforeach;?>
-                            </select>
+                            <label for="Customer">Customer (select one):</label>
+                                <select class="form-control" id="Customer" name ="customer_name">
+                                    <!-- // print_r($rows); -->
+                                    <?php 
+                                // print_r($rows); for debugiing purposes only
+                                    foreach ($rows as $key => $data):                                                
+                                    ?>
+                                    <option value = "<?php echo $data ['customer_id'] ?>"> <?php echo $data ['first_name'] ?> </option>
+                                    <?php endforeach;?>
+                                </select>
                         </div> 
                         
                         <div class="form-group">
-                        <label for="Customer">Service (select one):</label>
-                            <select class="form-control" id="Customer" name ="customer_name">
-                                <!-- // print_r($rows); -->
-                                <?php 
-                                //print_r($rows);
-                                  foreach ($rows1 as $key => $data):                                                
-                                ?>
-                                <option value = "<?php echo $data ['service_id'] ?>">
-                                    
-                                    <?php echo $data ['type_of_service'] ?>
-                                </option>
-                                  <?php endforeach;?>
-                            </select>
-
-                      
+                            <label for="Customer">Service (select one):</label>
+                                <select class="form-control" id="Customer" name ="service_name">
+                                    <!-- // print_r($rows); -->
+                                    <?php 
+                                    //print_r($rows);
+                                    foreach ($rows1 as $key => $data):                                                
+                                    ?>
+                                    <option value = "<?php echo $data ['service_id'] ?>"> <?php echo $data ['type_of_service'] ?> </option>
+                                    <?php endforeach;?>
+                                </select>
                         </div> 
-                        
-                        <!-- 
-                        </div>
-
-                        <div class="form-group">
-                        <label for="Phone">Phone:</label>
-                        <input type="text" class="form-control" id="phone" value = "<?php //echo $info [0]['phone']?>"
-                                placeholder = "Enter Phone Number" name = "phone" required>
-                        
-                        </div>
-
-                        <div class="form-group">
-                        <label for="E-mail">E-mail:</label>
-                        <input type="text" class="form-control" id="email" value = "<?php //echo $info [0]['email']?>"
-                                placeholder = "Enter E-mail Address" name = "email" required>
-                        
-                        </div>
-                        -->
-                                 
+                                                  
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                     
