@@ -1,3 +1,4 @@
+
 <?php
 
 require_once('dbConnect.php');
@@ -25,4 +26,10 @@ $db = get_db();
             echo "Can not delete record";
         }
     }
+
+    echo '<br/>';
+             
+        echo '<a href="job.php?Job Control Panel" <button class="btn btn-success mt-3 " name="Job Control Panel">Job Control Panel</button></a>';
+        echo '<br/>';
+        echo '<a href="acme.php?Customer Control Panel" <button class="btn btn-success mt-3 " name="Customer Control Panel">Customer Control Panel</button></a>';
 ?>
