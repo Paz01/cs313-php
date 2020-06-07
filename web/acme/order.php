@@ -65,7 +65,16 @@ $stmt->execute();
 //$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //print_r($rows); // only for debugging purposes to see what we are fetching.
+
+$query = ' SELECT service_id, type_of_service FROM service';
+$stmt1 = $db->prepare($query);
+$stmt1->execute();
+$rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
+
+
+
 <!DOCTYPE html>
 <head>
   <title>Job Orders</title>
@@ -119,10 +128,21 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div> 
                         
                         <div class="form-group">
-                        <label for="Service">Service (select one):</label>
-                            <select class="form-control" id="Service">
-                                <option>1</option>
+                        <label for="Customer">Service (select one):</label>
+                            <select class="form-control" id="Customer" name ="customer_name">
+                                <!-- // print_r($rows); -->
+                                <?php 
+                                //print_r($rows);
+                                  foreach ($rows1 as $key => $data):                                                
+                                ?>
+                                <option value = "<?php echo $data ['service_id'] ?>">
+                                    
+                                    <?php echo $data ['type_of_service'] ?>
+                                </option>
+                                  <?php endforeach;?>
                             </select>
+
+                      
                         </div> 
                         
                         <!-- 
