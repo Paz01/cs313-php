@@ -112,7 +112,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                                 <option value = "<?php echo $data ['customer_id'] ?>">
                                     
-                                    <?php echo $data ['first_Name'] ?>
+                                    <?php echo $data ['first_name'] ?>
                                 </option>
                                   <?php endforeach;?>
                             </select>
