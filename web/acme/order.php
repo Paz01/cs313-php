@@ -2,7 +2,7 @@
 
 require_once('dbConnect.php');
 $db = get_db();
-
+/*
 $info = null;
 // insert a new Record
 if(!empty($_POST) && empty($_GET))
@@ -58,8 +58,8 @@ elseif(!empty($_GET) && !empty($_POST))
 ?> 
 
 <?php 
-//require_once('dbConnect.php');
-//$db = get_db();
+require_once('dbConnect.php');
+$db = get_db();
 
 $query = 'SELECT first_Name, customer_id FROM customer';
 $stmt = $db->prepare($query);
