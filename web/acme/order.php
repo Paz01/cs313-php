@@ -68,10 +68,15 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //print_r($rows); // only for debugging purposes to see what we are fetching.
 
-$query = ' SELECT service_id, type_of_service FROM service';
+$query = 'SELECT service_id, type_of_service FROM service';
 $stmt1 = $db->prepare($query);
 $stmt1->execute();
 $rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+$query = 'SELECT employee_id, e_user_name FROM employee';
+$stmt2 = $db->prepare($query);
+$stmt2->execute();
+$rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -126,7 +131,7 @@ $rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
                         
                         <div class="form-group">
                             <label for="Customer">Service (select one):</label>
-                                <select class="form-control" id="Customer" name ="service_name">
+                                <select class="form-control" id="Service" name ="service_name">
                                     <!-- // print_r($rows); -->
                                     <?php 
                                     //print_r($rows);
@@ -136,6 +141,19 @@ $rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
                                     <?php endforeach;?>
                                 </select>
                         </div> 
+
+                        <div class="form-group">
+                            <label for="Employee">Employee (select one):</label>
+                                <select class="form-control" id="Employee" name ="employee_name">
+                                    <!-- // print_r($rows); -->
+                                    <?php 
+                                    //print_r($rows);
+                                    foreach ($rows2 as $key => $data):                                                
+                                    ?>
+                                    <option value = "<?php echo $data ['employee_id'] ?>"> <?php echo $data ['e_user_name'] ?> </option>
+                                    <?php endforeach;?>
+                                </select>
+                        </div>
                                                   
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
