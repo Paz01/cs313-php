@@ -11,10 +11,11 @@ if(!empty($_POST) && empty($_GET))
     $price = $_POST['price'];
     $customer_name = $_POST['customer_name'];
     $service_name = $_POST['service_name'];
+    $employee_name = $_POST['employee_name'];
     
     //INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('The job went smooth', '75.00',1,1,1);
-    $query = "INSERT INTO job (notes, price, customer_id, service_id) 
-              VALUES ('$notes', '$price', '$customer_name', '$service_name');";
+    $query = "INSERT INTO job (notes, price, customer_id, service_id employee_id) 
+              VALUES ('$notes', '$price', '$customer_name', '$service_name', $employee_name);";
 
     $stmt = $db->prepare($query);
     $stmt->execute();
