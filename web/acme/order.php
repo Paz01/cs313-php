@@ -107,6 +107,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <select class="form-control" id="Customer" name ="customer_name">
                                 <!-- // print_r($rows); -->
                                 <?php 
+                                print_r($rows);
                                   foreach ($rows as $key => $data):                                                
                                 ?>
                                 <option value = "<?php echo $data ['customer_id'] ?>">
