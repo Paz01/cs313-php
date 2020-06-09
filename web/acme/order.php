@@ -10,7 +10,7 @@ if(!empty($_POST) && empty($_GET))
     print_r($_POST);
     
     $notes = $_POST['notes'];
-    $price = $_POST['price'];
+    $price = (float)$_POST['price'];
     $customer_name = (int)$_POST['customer_name'];
     $service_name = (int)$_POST['service_name'];
     $employee_name = (int)$_POST['employee_name'];
