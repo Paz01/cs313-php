@@ -2,11 +2,13 @@
 
 require_once('dbConnect.php');
 $db = get_db();
-/*
+
 $info = null;
 // insert a new Record
 if(!empty($_POST) && empty($_GET))
 {
+    print_r($_POST);
+    /*
     $notes = $_POST['notes'];
     $price = $_POST['price'];
     $customer_name = $_POST['customer_name'];
@@ -20,6 +22,7 @@ if(!empty($_POST) && empty($_GET))
     $stmt = $db->prepare($query);
     $stmt->execute();
     $stmt->fetchALL(PDO::FETCH_ASSOC); 
+    */
 }
 /*
 // Look up a record
