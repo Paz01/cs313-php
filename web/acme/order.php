@@ -8,7 +8,7 @@ $info = null;
 if(!empty($_POST) && empty($_GET))
 {
     print_r($_POST);
-    /*
+    
     $notes = $_POST['notes'];
     $price = $_POST['price'];
     $customer_name = $_POST['customer_name'];
@@ -20,9 +20,17 @@ if(!empty($_POST) && empty($_GET))
               VALUES ('$notes', '$price', '$customer_name', '$service_name', $employee_name);";
 
     $stmt = $db->prepare($query);
-    $stmt->execute();
-    $stmt->fetchALL(PDO::FETCH_ASSOC); 
-    */
+    
+    if ($stmt->execute())
+    {
+        echo "Query ejecutado exitosamente";
+        $stmt->fetchALL(PDO::FETCH_ASSOC); 
+    }
+    else{
+        echo "Error al ejecutar el query";
+    }
+    
+    
 }
 /*
 // Look up a record
