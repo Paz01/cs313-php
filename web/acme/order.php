@@ -16,7 +16,7 @@ if(!empty($_POST) && empty($_GET))
     $employee_name = (int)$_POST['employee_name'];
     
     //INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('The job went smooth', '75.00',1,1,1);
-    //$query = "INSERT INTO job (notes, price, customer_id, service_id employee_id) VALUES ($notes, $price, $customer_name, $service_name, $employee_name);";
+    $query = "INSERT INTO job (notes, price, customer_id, service_id employee_id) VALUES ($notes, $price, $customer_name, $service_name, $employee_name);";
 
     //$stmt = $db->prepare($query);
     
