@@ -11,9 +11,9 @@ if(!empty($_POST) && empty($_GET))
     
     $notes = $_POST['notes'];
     $price = $_POST['price'];
-    $customer_name = $_POST['customer_name'];
-    $service_name = $_POST['service_name'];
-    $employee_name = $_POST['employee_name'];
+    $customer_name = (int)$_POST['customer_name'];
+    $service_name = (int)$_POST['service_name'];
+    $employee_name = (int)$_POST['employee_name'];
     
     //INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('The job went smooth', '75.00',1,1,1);
     $query = "INSERT INTO job (notes, price, customer_id, service_id employee_id) 
@@ -110,7 +110,7 @@ $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
               <!-- <pre> <?php //print_r($test); ?> </pre> --> <!--for debugging purposes only-->
                
                 <table class ="table">
-                    <?php if (!empty($_GET)): ?>
+                    <?php if (!empty($_GET)): ?>              <!-- solo para editar -->
                     <form action='<?php echo "order.php?record=$record_id" ?>' method="POST">
                     <?php else: ?>
                     <form action='<?php echo "order.php" ?>' method="POST">
