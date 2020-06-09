@@ -20,7 +20,7 @@ if(!empty($_POST) && empty($_GET))
     echo $query;
     $stmt = $db->prepare($query);
     
-    //$stmt->execute();
+    $stmt->execute();
 
     //print_r($db->errorInfo());
 
