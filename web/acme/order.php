@@ -21,16 +21,22 @@ if(!empty($_POST) && empty($_GET))
 
     $stmt = $db->prepare($query);
     
+    $stmt->execute();
+
+    print_r($db->errorInfo());
+
+    $stmt->fetchALL(PDO::FETCH_ASSOC); 
+    /*
     if ($stmt->execute())
     {
         echo "Query ejecutado exitosamente";
-        $stmt->fetchALL(PDO::FETCH_ASSOC); 
+        
     }
     else{
         echo "Error al ejecutar el query";
     }
     
-    
+    */
 }
 /*
 // Look up a record
