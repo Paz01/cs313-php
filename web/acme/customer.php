@@ -50,6 +50,23 @@ elseif(!empty($_GET) && !empty($_POST))
     $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
 }
 ?>
+<script>
+function phonenumber(inputtxt)
+{
+  var phoneno = /^\d{10}$/;
+  if(inputtxt.value.match(phoneno))
+  {
+      return true;
+  }
+  else
+  {
+     alert("Not a valid Phone Number");
+     return false;
+  }
+  }
+</script>
+
+
 
 <!DOCTYPE html>
 <head>
@@ -94,7 +111,8 @@ elseif(!empty($_GET) && !empty($_POST))
                         <div class="form-group">
                         <label for="Phone">Phone:</label>
                         <input type="tel" class="form-control" id="phone" value = "<?php echo $info [0]['phone']?>"
-                                placeholder = "Enter Phone Number" name = "phone" required>
+                                placeholder = "Enter Phone Number" name = "phone" required onclick="phonenumber(document.form1.text1)">
+                                
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
