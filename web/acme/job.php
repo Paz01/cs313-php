@@ -3,16 +3,14 @@ require ('dbConnect.php');
 $db = get_db();
 
 session_start();
-// SELECT * FROM JOB ORDER BY price DESC LIMIT 10;
-// SELECT customer_id, first_name, last_name FROM customer;
-$query = 'SELECT job.notes, job.price, customer.first_Name, customer.last_Name, service.type_of_service, employee.e_user_name AS employee_name 
+
+$query = 'SELECT job.job_id, job.notes, job.price, customer.first_Name, customer.last_Name, service.type_of_service, employee.e_user_name AS employee_name 
           FROM job INNER JOIN customer ON customer.customer_id = job.customer_id 
           INNER JOIN employee ON employee.employee_id = job.employee_id 
           INNER JOIN service ON service.service_id = job.service_id';
-//$query = 'SELECT job_id, notes, price, customer_id, service_id, employee_id FROM job';
+
 $stmt = $db->prepare($query);
 $stmt->execute();
-//$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -41,7 +39,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <br>
         <div class="container">
             <h3 class="text-center py-3">Job Control Panel - Acme Enterprises
-            <a href="order.php" <button class="btn btn-primary mt-3 float-right" name="Create">Create new Job order </button> </a> </h3>
+            <a href="order.php" class="btn btn-primary mt-3 float-right" name="Create">Create new Job order </a> </h3>
                 <br>
                     <table class ="table table-hover">
                     
@@ -75,7 +73,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <?php $id = $record['job_id'] ?>
                                             
                                             <a href = " <?php echo "order.php?record=$id"?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                            <a onclick='confirmationDelete(this);return false;' href = " <?php echo "delete.php?record=$id"?>">  <button type="button" class="btn btn-danger ">Delete</button> </a>
+                                            <a onclick='confirmationDelete(this);return false;' href = " <?php echo "delete_job.php?record=$id"?>">  <button type="button" class="btn btn-danger ">Delete</button> </a>
                                         </td>
                                             <?php $i++; ?>
                                     </tr>
@@ -85,15 +83,11 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     </table>
 
-            <a href="logout.php?logout" <button class="btn btn-success mt-3 " name="Logout">Logout</button> </a>
+            <a href="logout.php?logout"  class="btn btn-success mt-3 " name="Logout">Logout </a>
             <br>
-            <a href="welcome.php?welcome" <button class="btn btn-primary mt-3"name="Logout">Home</button></a> 
+            <a href="welcome.php?welcome"  class="btn btn-primary mt-3"name="Logout">Home</a> 
 
         </div>
-        <?php
-         
-        ?>
-              
 
         <br/>
 

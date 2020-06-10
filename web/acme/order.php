@@ -3,79 +3,68 @@
 require_once('dbConnect.php');
 $db = get_db();
 
-//$info = null;
+$info = null;
+
+$success_message = array(
+    'result'  => false,
+    'message' => ''
+);
+
 // insert a new Record
-if(!empty($_POST) && empty($_GET))
-{
-    print_r($_POST);
-    
-    $notes = $_POST['notes'];
-    $price = (float)$_POST['price'];
+if(!empty($_POST) && empty($_GET)){
+    $notes         = $_POST['notes'];
+    $price         = (float)$_POST['price'];
     $customer_name = (int)$_POST['customer_name'];
-    $service_name = (int)$_POST['service_name'];
+    $service_name  = (int)$_POST['service_name'];
     $employee_name = (int)$_POST['employee_name'];
     
-    //INSERT INTO job (notes, price, customer_id, service_id, employee_id) VALUES ('The job went smooth', '75.00',1,1,1);
-    $query = "INSERT INTO job (notes, price, customer_id, service_id employee_id) VALUES ($notes, $price, $customer_name, $service_name, $employee_name);";
-    //echo $query;
-    $stmt4 = $db->prepare($query);
-    echo "Paso prepare";
-    $stmt4->execute();
+    $query = "INSERT INTO public.job (notes, price, customer_id, service_id, employee_id) VALUES('$notes', $price, $customer_name, $service_name, $employee_name);";
+    $stmt4 = $db->prepare($query);    
+    #$stmt4->execute();
+    if ($stmt4->execute()):
+        $success_message['result']  = true;
+        $success_message['message'] = "You have added a new record";
+    endif;
 
-    //print_r($db->errorInfo());
-
-    //$stmt->fetchALL(PDO::FETCH_ASSOC); 
-    /*
-    if ($stmt->execute())
-    {
-        echo "Query ejecutado exitosamente";
-        
-    }
-    else{
-        echo "Error al ejecutar el query";
-    }
-    
-    */
-}
-/*
-// Look up a record
-elseif(!empty($_GET) && empty($_POST))
-{
+}elseif(!empty($_GET) && empty($_POST)){
     $record_id = $_GET['record'];
-    $query = "SELECT * FROM customer WHERE customer_id = $record_id";
+    $query     = "SELECT * FROM job WHERE job_id = $record_id";
     
     $stmt = $db->prepare($query);
     $stmt->execute();
-    $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
-}
-// INSERT INTO customer (first_Name, last_Name, phone, email) 
-// VALUES ('John', 'Smith', '817-845-4574', 'Smith@gmail.com');
-// Update an existing record. 
+    $info = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
-elseif(!empty($_GET) && !empty($_POST))
-{
-    $first = $_POST['first'];
-    $last = $_POST['last'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
+}elseif(!empty($_GET) && !empty($_POST)){
+    
+    $notes         = $_POST['notes'];
+    $price         = (float)$_POST['price'];
+    $customer_name = (int)$_POST['customer_name'];
+    $service_name  = (int)$_POST['service_name'];
+    $employee_name = (int)$_POST['employee_name'];
 
     $record_id = $_GET['record'];
-    $query ="UPDATE customer SET first_name='$first', last_name='$last', phone='$phone', email='$email'
-                WHERE customer_id=$record_id;";
+    # investigar que son los schemas en base de datos con PostgreSQL
+    $query ="
+        UPDATE public.job
+        SET notes='$notes', price=$price, customer_id=$customer_name, service_id=$service_name, employee_id=$employee_name
+        WHERE job_id=$record_id;
+        ";
     
-    //UPDATE customer SET first_name= 'James' WHERE customer_id=7;
-
     $stmt = $db->prepare($query);
     
-    $test = $stmt->execute();
-    $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
-}
-*/
-?> 
+    if ($stmt->execute()): #verifico si se ejecuto el query
+        $success_message['result']  = true;
+        $success_message['message'] = "You have edited the record";
+    endif;
 
-<?php 
-//require_once('dbConnect.php');
-//$db = get_db();
+    $info = $stmt->fetchALL(PDO::FETCH_ASSOC); 
+    $record_id = $_GET['record'];
+    $query     = "SELECT * FROM job WHERE job_id = $record_id";
+    
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $info = $stmt->fetchALL(PDO::FETCH_ASSOC);
+}
 
 $query = 'SELECT first_Name, customer_id FROM customer';
 $stmt = $db->prepare($query);
@@ -112,36 +101,38 @@ $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             <h4 class="text-center py-3">Job Order Information
 
             <a href="job.php" class="btn btn-success mt-3 float-right" name="Control">Back to Job Control Panel </a> </h4>
-              <!-- <pre> <?php //print_r($test); ?> </pre> --> <!--for debugging purposes only-->
-               
+              <!-- <pre> <?php #print_r($info); ?> </pre> --> <!--for debugging purposes only-->
+               <?php if ($success_message['result'] == true): ?>
+                   <h1><?php echo $success_message['message']; ?></h1>
+               <?php endif ?>
                 <table class ="table">
                     <?php if (!empty($_GET)): ?>              <!-- solo para editar -->
-                    <form action='<?php echo "order.php?record=$record_id" ?>' method="POST">
+                        <form action='<?php echo "order.php?record=$record_id" ?>' method="POST">
                     <?php else: ?>
-                    <form action='<?php echo "order.php" ?>' method="POST">
+                        <form action='<?php echo "order.php" ?>' method="POST">
                     <?php endif; ?>
 
                         <div class="form-group">
                             <label for="Notes">Notes:</label>
-                                <input type="text" class="form-control" id="note" value = "<?php //echo $info [0]['first_name'] ?>"
+                                <input type="text" class="form-control" id="note" value = "<?php echo $info[0]['notes'] ?>"
                                         placeholder = "Enter notes about the job" name = "notes" required>
                         </div>
 
                         <div class="form-group">
                             <label for="Price">Price:</label>
-                                <input type="text" class="form-control" id="price" value = "<?php //echo $info [0]['last_name']?>"
+                                <input type="text" class="form-control" id="price" value = "<?php echo $info [0]['price']?>"
                                         placeholder = "Enter the price" name = "price" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="Customer">Customer (select one):</label>
                                 <select class="form-control" id="Customer" name ="customer_name">
-                                    <!-- // print_r($rows); -->
-                                    <?php 
-                                // print_r($rows); for debugiing purposes only
-                                    foreach ($rows as $key => $data):                                                
-                                    ?>
-                                    <option value = "<?php echo $data ['customer_id'] ?>"> <?php echo $data ['first_name'] ?> </option>
+                                    <?php  foreach ($rows as $key => $data):?>
+                                        <?php if ($data['customer_id'] == $info[0]['customer_id']): ?>
+                                            <option value = "<?php echo $data ['customer_id'] ?>" selected> <?php echo $data ['first_name'] ?> </option>
+                                        <?php else: ?>
+                                            <option value = "<?php echo $data ['customer_id'] ?>"> <?php echo $data ['first_name'] ?> </option>
+                                        <?php endif ?>
                                     <?php endforeach;?>
                                 </select>
                         </div> 
@@ -149,12 +140,12 @@ $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                         <div class="form-group">
                             <label for="Customer">Service (select one):</label>
                                 <select class="form-control" id="Service" name ="service_name">
-                                    <!-- // print_r($rows); -->
-                                    <?php 
-                                    //print_r($rows);
-                                    foreach ($rows1 as $key => $data):                                                
-                                    ?>
-                                    <option value = "<?php echo $data ['service_id'] ?>"> <?php echo $data ['type_of_service'] ?> </option>
+                                    <?php  foreach ($rows1 as $key => $data):?>
+                                        <?php if ($data ['service_id'] == $info[0]['service_id']): ?>
+                                            <option value = "<?php echo $data ['service_id'] ?>" selected> <?php echo $data ['type_of_service'] ?> </option>
+                                        <?php else: ?>
+                                            <option value = "<?php echo $data ['service_id'] ?>"> <?php echo $data ['type_of_service'] ?> </option>
+                                        <?php endif ?>
                                     <?php endforeach;?>
                                 </select>
                         </div> 
@@ -162,16 +153,16 @@ $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                         <div class="form-group">
                             <label for="Employee">Employee (select one):</label>
                                 <select class="form-control" id="Employee" name ="employee_name">
-                                    <!-- // print_r($rows); -->
-                                    <?php 
-                                    //print_r($rows);
-                                    foreach ($rows2 as $key => $data):                                                
-                                    ?>
-                                    <option value = "<?php echo $data ['employee_id'] ?>"> <?php echo $data ['e_user_name'] ?> </option>
+                                    <?php  foreach ($rows2 as $key => $data):?>
+                                        <?php if ($data['employee_id'] == $info[0]['employee_id']): ?>
+                                            <option value = "<?php echo $data ['employee_id'] ?>" selected> <?php echo $data ['e_user_name'] ?> </option>
+                                        <?php else: ?>
+                                            <option value = "<?php echo $data ['employee_id'] ?>"> <?php echo $data ['e_user_name'] ?> </option>    
+                                        <?php endif ?>
+                                        
                                     <?php endforeach;?>
                                 </select>
                         </div>
-                                                  
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                     
