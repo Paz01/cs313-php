@@ -85,6 +85,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             <a href="logout.php?logout"  class="btn btn-success mt-3 " name="Logout">Logout </a>
             <br>
+            <a href="job.php?Job Control Panel" <button class="btn btn-success mt-3 " name="Job Control Panel">Job Control Panel</button></a>
+            <br>
             <a href="welcome.php?welcome"  class="btn btn-primary mt-3"name="Logout">Home</a> 
 
         </div>
