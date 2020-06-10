@@ -77,9 +77,11 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     </table>
 
-            <a href="logout.php?logout" <button class="btn btn-success mt-3 " name="Logout">Logout</button> </a>
+            <a href="job.php?Job Control Panel" <button class="btn btn-success mt-3 " name="Job Control Panel">Job Control Panel</button></a>
             <br>
-            <a href="welcome.php?welcome" <button class="btn btn-primary mt-3 " name="Logout">Home</button></a> 
+            <a href="logout.php?logout" <button class="btn btn-danger mt-3 " name="Logout">Logout</button> </a>
+            <br>
+            <a href="welcome.php?welcome" <button class="btn btn-primary mt-3 " name="Home">Home</button></a> 
         </div>
         <?php
          /*            
