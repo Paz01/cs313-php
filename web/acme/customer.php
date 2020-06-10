@@ -51,7 +51,7 @@ elseif(!empty($_GET) && !empty($_POST))
 }
 ?>
 <script>
-function phonenumber(inputtxt)
+/*function phonenumber(inputtxt)
 {
     var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
   if(inputtxt.value.match(phoneno))
@@ -63,7 +63,7 @@ function phonenumber(inputtxt)
      alert("Not a valid Phone Number");
      return false;
   }
-}
+} */
 </script>
 
 
@@ -111,8 +111,8 @@ function phonenumber(inputtxt)
                         <div class="form-group">
                         <label for="Phone">Phone:</label>
                         <input type="tel" class="form-control" id="phone" value = "<?php echo $info [0]['phone']?>"
-                                placeholder = "Enter Phone Number" name = "phone" required
-                                onclick="phonenumber(document.form1.text1)">
+                                placeholder = "Enter Phone Number" name = "phone" required> 
+                                <!--onclick="phonenumber(document.form1.text1)"> -->
                                 
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
