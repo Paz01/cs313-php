@@ -93,7 +93,7 @@ elseif(!empty($_GET) && !empty($_POST))
 
                         <div class="form-group">
                         <label for="Phone">Phone:</label>
-                        <input type="text" class="form-control" id="phone" value = "<?php echo $info [0]['phone']?>"
+                        <input type="tel" class="form-control" id="phone" value = "<?php echo $info [0]['phone']?>"
                                 placeholder = "Enter Phone Number" name = "phone" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
